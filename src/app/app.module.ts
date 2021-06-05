@@ -3,10 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './common/header/header.component';
+import { FooterComponent } from './common/footer/footer.component';
+import { PageNotFoundComponent } from './error/page-not-found/page-not-found.component';
+import { LoginComponent } from './account/login/login.component';
+import { SignUpComponent } from './account/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    PageNotFoundComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
