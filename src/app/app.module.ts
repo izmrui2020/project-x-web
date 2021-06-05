@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { SidebarModule } from 'ng-sidebar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { PageNotFoundComponent } from './error/page-not-found/page-not-found.com
 import { LoginComponent } from './account/login/login.component';
 import { SignUpComponent } from './account/sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
+import { ExceptionPageComponent } from './error/exception-page/exception-page.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,13 @@ import { HomeComponent } from './home/home.component';
     PageNotFoundComponent,
     LoginComponent,
     SignUpComponent,
-    HomeComponent
+    HomeComponent,
+    ExceptionPageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SidebarModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
