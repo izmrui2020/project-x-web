@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ExceptionPageComponent } from './exception-page.component';
+import { TopPageComponent } from './top-page.component';
 
-describe('ExceptionPageComponent', () => {
-  let component: ExceptionPageComponent;
-  let fixture: ComponentFixture<ExceptionPageComponent>;
+describe('TopPageComponent', () => {
+  let component: TopPageComponent;
+  let fixture: ComponentFixture<TopPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExceptionPageComponent ]
+      declarations: [ TopPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ExceptionPageComponent);
+    fixture = TestBed.createComponent(TopPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
