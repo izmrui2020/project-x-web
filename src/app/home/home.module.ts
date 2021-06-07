@@ -1,5 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
+//import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 //import { SidebarModule } from 'ng-sidebar';
 
 import { HomeRoutingModule } from '../home/home-routing.modue';
@@ -18,11 +20,11 @@ import { ExComponent } from '../home/ex/ex.component';
     ExComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     HomeRoutingModule,
   ],
   //providers: [],
   //bootstrap: [HomeComponent]
-  exports:[ HomeComponent ]
+  //exports:[ HomeComponent ]
 })
 export class HomeModule { }
