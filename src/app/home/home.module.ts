@@ -12,12 +12,14 @@ import { HeaderComponent } from '../common/header/header.component';
 //import { SignUpComponent } from './account/sign-up/sign-up.component';
 
 import { ExComponent } from '../home/ex/ex.component';
+import { SubComponent } from './sub/sub.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     HomeComponent,
     ExComponent,
+    SubComponent,
   ],
   imports: [
     CommonModule,

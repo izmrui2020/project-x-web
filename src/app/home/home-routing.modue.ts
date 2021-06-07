@@ -3,11 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from '../home/home.component';
 import { ExComponent } from '../home/ex/ex.component';
+import { SubComponent } from '../home/sub/sub.component'
 
 const routes: Routes = [
-  { path: '', component: HomeComponent,
+  { path: '',
+    component: HomeComponent,
     children: [
-      { path: 'ex', component: ExComponent },
+      { path: '',
+        component: SubComponent
+      },
+      { path: 'ex',
+        component: ExComponent
+      },
     ]
   }
 ];
