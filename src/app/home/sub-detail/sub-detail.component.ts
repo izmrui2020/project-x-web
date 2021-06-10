@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { lists } from './sublists';
 
 @Component({
   selector: 'app-sub-detail',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubDetailComponent implements OnInit {
 
-  constructor() { }
+  product
+
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.product = lists[+params.get('listsId')]
+    })
   }
 
 }

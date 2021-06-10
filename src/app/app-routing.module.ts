@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'top', component: TopPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'home', component: HomeComponent },
+  //{ path: 'home', component: HomeComponent },
   { path: 'home',
   loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   }
