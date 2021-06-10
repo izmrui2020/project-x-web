@@ -15,4 +15,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  do_login(event) {
+    this.http.login_work()
+
+  }
+
 }
