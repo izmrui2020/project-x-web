@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '',
     component: HomeComponent,
     children: [
-      { path: '',
+      { path: 'sub',
         component: SubComponent
       },
       { path: 'ex',
