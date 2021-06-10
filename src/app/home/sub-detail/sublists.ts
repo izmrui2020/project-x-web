@@ -12,6 +12,11 @@ export const lists = [
   {
     name: 'Phone Standard',
     price: 299,
-    description: ''
+    description: 'bbbbbbbbbbbbbbbbbbbb'
+  },
+  {
+    name: 'Phone hoge',
+    price: 252,
+    description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
   }
 ];

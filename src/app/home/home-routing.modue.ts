@@ -16,7 +16,7 @@ const routes: Routes = [
       { path: 'ex',
         component: ExComponent
       },
-      { path: 'detail',
+      { path: 'listsId',
         component: SubDetailComponent
       }
     ]
