@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+
+import { HttpService } from '../service/http.service';
 
 @Component({
   selector: 'app-home',
@@ -8,27 +9,30 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private service: HttpService,
+  ) { }
 
   ngOnInit(): void {
 
-    const observable = new Observable(subscriber => {
-      subscriber.next(1);
-      subscriber.next(2);
-      subscriber.next(3);
-      setTimeout(() => {
-        subscriber.next(4);
-        subscriber.complete();
-      }, 1000);
-    });
+    const observable = this.service.getlist()
+    //new Observable(subscriber => {
+    //   subscriber.next(1);
+    //   subscriber.next(2);
+    //   subscriber.next(3);
+    //   setTimeout(() => {
+    //     subscriber.next(4);
+    //     subscriber.complete();
+    //   }, 5000);
+    // });
 
-    console.log('just before subscribe');
-    observable.subscribe({
-      next(x) { console.log('got value ' + x); },
-      error(err) { console.error('something wrong occurred: ' + err); },
-      complete() { console.log('done'); }
-    });
-    console.log('just after subscribe');
+  //   console.log('just before subscribe');
+  //   observable.subscribe({
+  //     next(x) { console.log('got value ' + x); },
+  //     error(err) { console.error('something wrong occurred: ' + err); },
+  //     complete() { console.log('done'); }
+  //   });
+  //   console.log('just after subscribe');
 
   }
 

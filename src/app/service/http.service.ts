@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 import { LoginUserDto } from './class-dto/login-user-dto';
 
@@ -11,6 +12,7 @@ export class HttpService {
   public URL = "https://......"
 
   constructor(
+    private http: HttpClient,
     private loguser: LoginUserDto,
   ) {
 
@@ -18,7 +20,9 @@ export class HttpService {
 
   public login_work() {}
 
+  public getlist() {
 
+  }
 
 
 }

@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
+
 import { HttpService } from './service/http.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +26,7 @@ import { HomeModule } from './home/home.module'
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     HomeModule,
  //   SidebarModule.forRoot()
