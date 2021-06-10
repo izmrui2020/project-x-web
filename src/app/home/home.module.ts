@@ -13,6 +13,7 @@ import { HeaderComponent } from '../common/header/header.component';
 
 import { ExComponent } from '../home/ex/ex.component';
 import { SubComponent } from './sub/sub.component';
+import { SubDetailComponent } from './sub-detail/sub-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SubComponent } from './sub/sub.component';
     HomeComponent,
     ExComponent,
     SubComponent,
+    SubDetailComponent,
   ],
   imports: [
     CommonModule,

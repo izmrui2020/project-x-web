@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-
-import { LoginUserDto } from './class-dto/login-user-dto';
+import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,17 +9,43 @@ export class HttpService {
 //環境変数からドメインをインスタンス化
   public URL = "https://......"
 
+  public httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    })
+  }
+
   constructor(
     private http: HttpClient,
-    private loguser: LoginUserDto,
   ) {
 
   }
 
-  public login_work() {}
+//////////////////////////////////////////////////////////////////////////
+  /**
+   *
+   * @param operation - 失敗した操作の名前
+   * @param result - observableな結果として返す任意の値
+   * 失敗したHttp操作を処理します。
+   * アプリを持続させます。*/
+
+   handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      //TODO: リモート上のロギング基盤にエラーを送信する
+      console.error(error); //かわりにConsoleに出力
+
+      //TODO: ユーザへの開示のためにエラーの変換処理を改善する
+      console.log(`${operation} failed: ${error.message}`);
+
+      //　空の結果を返して、アプリを持続可能にする
+      return of(result as T);
+    };
+  }
 
   public getlist() {
-
+    return this.http.get(this.URL + '', this.httpOptions)
   }
 
 
