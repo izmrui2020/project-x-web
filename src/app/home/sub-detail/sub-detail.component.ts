@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { SubComponent } from '../sub/sub.component';
+
 import { lists } from './sublists';
 
 @Component({
@@ -17,8 +19,14 @@ export class SubDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.get_detail();
+  }
+
+  get_detail(): void {
+    const id =
     this.route.paramMap.subscribe(params => {
-      this.product = lists[+params.get('listsId')]
+      this.product = lists[+params.get('listId')]
+      console.log("listId = ", this.product)
     })
   }
 
