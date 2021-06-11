@@ -7,18 +7,11 @@ import { SubComponent } from '../home/sub/sub.component'
 import { SubDetailComponent } from './sub-detail/sub-detail.component'
 
 const routes: Routes = [
-  { path: '',
-    component: HomeComponent,
+  { path: '', component: HomeComponent,
     children: [
-      { path: '',
-        component: SubComponent
-      },
-      { path: 'ex',
-        component: ExComponent
-      },
-      { path: 'listsId',
-        component: SubDetailComponent
-      }
+      { path: '', component: SubComponent },
+      { path: 'ex', component: ExComponent },
+      { path: 'listsId', component: SubDetailComponent }
     ]
   }
 ];

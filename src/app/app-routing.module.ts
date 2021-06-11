@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { TopPageComponent } from './top-page/top-page.component';
-import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './account/sign-up/sign-up.component';
 import { LoginComponent } from './account/login/login.component';
 
