@@ -26,7 +26,7 @@ export class SubDetailComponent implements OnInit {
     const id =
     this.route.paramMap.subscribe(params => {
       this.product = lists[+params.get('listId')]
-      console.log("listId = ", this.product)
+      console.log("listId = ", lists)
     })
   }
 
