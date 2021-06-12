@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
+import { MaterializeModule } from 'angular2-materialize';
+import { Angular2TokenService } from 'angular2-token';
 
 import { HttpService } from './service/http.service';
 
@@ -29,9 +30,13 @@ import { HomeModule } from './home/home.module'
     HttpClientModule,
     AppRoutingModule,
     HomeModule,
+    MaterializeModule,
  //   SidebarModule.forRoot()
   ],
-  providers: [HttpService],
+  providers: [
+    HttpService,
+    Angular2TokenService
+  ],
   bootstrap: [AppComponent],
 
 })
