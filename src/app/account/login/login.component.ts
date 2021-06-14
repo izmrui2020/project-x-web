@@ -1,5 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import {  FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
+
 import { AccountService } from '../../service/account.service';
+
+
 
 @Component({
   selector: 'app-login',
@@ -8,16 +14,25 @@ import { AccountService } from '../../service/account.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(
-    private http: AccountService
-  ) { }
+  form: FormGroup;
+  loading = false;
+  submitted = false;
 
-  ngOnInit(): void {
+  constructor(
+    private http: AccountService,
+
+    private route: ActivatedRoute,
+    private router: Router,
+    private accountService: AccountService,
+  ) {
   }
 
-  // do_login(event) {
-  //   this.http.login_work()
+  get f() { return this.form.controls; }
 
-  // }
+  ngOnInit() {
+
+  }
+
+  onSubmit() {}
 
 }

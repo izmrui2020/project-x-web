@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
 //import { SidebarModule } from 'ng-sidebar';
 
 import { HomeRoutingModule } from '../home/home-routing.modue';
@@ -15,6 +16,7 @@ import { ExComponent } from '../home/ex/ex.component';
 import { SubComponent } from './sub/sub.component';
 import { SubDetailComponent } from './sub-detail/sub-detail.component';
 
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -27,7 +29,7 @@ import { SubDetailComponent } from './sub-detail/sub-detail.component';
     CommonModule,
     HomeRoutingModule,
   ],
-  //providers: [],
+  providers: [],
   //bootstrap: [HomeComponent]
   //exports:[ HomeComponent ]
 })
