@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpService } from './http.service';
 
 import { LoginUserDto } from './class-dto/login-user-dto';
+import { NewUserDto } from './class-dto/new-user-dto';
 
 
 @Injectable({
