@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import {  FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AccountService } from '../../service/account.service';
@@ -14,25 +14,31 @@ import { AccountService } from '../../service/account.service';
 })
 export class LoginComponent implements OnInit {
 
-  form: FormGroup;
-  loading = false;
-  submitted = false;
+  login_form = this.fb.group({
+    email: ['', Validators.required],
+    pass: ['', Validators.required]
+  })
+
+  // loading = false;
+  // submitted = false; angular2-token  ???
 
   constructor(
     private http: AccountService,
-
+    private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
     private accountService: AccountService,
   ) {
   }
 
-  get f() { return this.form.controls; }
+  get f() { return this.login_form.controls; }
 
   ngOnInit() {
 
   }
 
-  onSubmit() {}
+  onSubmit() {
+    console.warn(this.login_form.value);
+  }
 
 }

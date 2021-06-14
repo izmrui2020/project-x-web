@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { Angular2TokenService } from 'angular2-token';
 
@@ -30,6 +32,8 @@ import { HomeModule } from './home/home.module'
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HomeModule,
  //   SidebarModule.forRoot()
   ],
