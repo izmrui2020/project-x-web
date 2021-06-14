@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { MaterializeModule } from 'angular2-materialize';
+
 import { Angular2TokenService } from 'angular2-token';
+
+
 
 import { HttpService } from './service/http.service';
 
@@ -13,7 +15,6 @@ import { FooterComponent } from './common/footer/footer.component';
 import { LoginComponent } from './account/login/login.component';
 import { SignUpComponent } from './account/sign-up/sign-up.component';
 import { TopPageComponent } from './top-page/top-page.component';
-
 
 import { HomeModule } from './home/home.module'
 
@@ -30,7 +31,6 @@ import { HomeModule } from './home/home.module'
     HttpClientModule,
     AppRoutingModule,
     HomeModule,
-    MaterializeModule,
  //   SidebarModule.forRoot()
   ],
   providers: [
@@ -38,6 +38,6 @@ import { HomeModule } from './home/home.module'
     Angular2TokenService
   ],
   bootstrap: [AppComponent],
+  })
 
-})
 export class AppModule { }
