@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  region: 'ap-northeast-1',
+  identityPoolId: 'ap-northeast-1:XXXXXXXX-YYYY-XXXX-YYYY-XXXXXXXXXXXX',
+  userPoolId: 'ap-northeast-1_XXXXXXXXX',
+  clientId: 'YYYYYYYYYYYYYYYYYYYYYYYYYY',
+
+  bucketName: 'angular-cognito-s3-file-uploader'
 };
 
 /*
