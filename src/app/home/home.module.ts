@@ -15,6 +15,7 @@ import { HeaderComponent } from '../common/header/header.component';
 import { ExComponent } from '../home/ex/ex.component';
 import { SubComponent } from './sub/sub.component';
 import { SubDetailComponent } from './sub-detail/sub-detail.component';
+import { PostComponent } from './post/post.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { SubDetailComponent } from './sub-detail/sub-detail.component';
     ExComponent,
     SubComponent,
     SubDetailComponent,
+    PostComponent,
   ],
   imports: [
     CommonModule,

@@ -5,8 +5,6 @@ import {
   CognitoUserAttribute,
   CognitoUser,
   AuthenticationDetails,
-  //CognitoIdentityServiceProvider
-  AmazonCognitoIdentity
  } from 'amazon-cognito-identity-js';
 import * as AWS from 'aws-sdk';
 
@@ -29,6 +27,35 @@ export class CognitoService {
     ClientId: environment.clientId
   };
   this.userPool = new CognitoUserPool(this.poolData);
+  }
+
+  signUp(username: string, password: string): Promise<any> {
+    const dataEmail = { Name: 'email', Value: username };
+    const attributeList = [];
+    attributeList.push(new CognitoUserAttribute(dataEmail));
+    return new Promise((resolve, reject) => {
+      this.userPool.signUp(username, password, attributeList, null, (err, result) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+  }
+
+  confirmation(username: string, confirmation_code: string): Promise<any> {
+    const userData = { Username: username, Pool: this.userPool };
+    const cognitoUser = new CognitoUser(userData);
+    return  new Promise((resolve, reject) => {
+      cognitoUser.confirmRegistration(confirmation_code, true, (err, result) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      });
+    });
   }
 
 }
