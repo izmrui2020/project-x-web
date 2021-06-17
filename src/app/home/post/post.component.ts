@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, interval } from 'rxjs';
+import { Post } from './post';
+import { PostService } from '../../service/post.service';
+
 
 @Component({
   selector: 'app-post',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
+  posts: Post[];
 
-  ngOnInit(): void {
+  constructor(
+    private ps: PostService
+  ) { }
+
+  ngOnInit() {
+    let timer = interval(5000);
+    timer.subscribe(() => this.getPost());
+  }
+
+  getPost() {
+    this.ps.getPosts()
+      .subscribe(posts => this.posts = posts );
   }
 
 }

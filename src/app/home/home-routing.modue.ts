@@ -5,13 +5,15 @@ import { HomeComponent } from '../home/home.component';
 import { ExComponent } from '../home/ex/ex.component';
 import { SubComponent } from '../home/sub/sub.component'
 import { SubDetailComponent } from './sub-detail/sub-detail.component'
+import { PostComponent } from './post/post.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent,
     children: [
       { path: '', component: SubComponent },
       { path: 'ex', component: ExComponent },
-      { path: 'detail/:id', component: SubDetailComponent }
+      { path: 'detail/:id', component: SubDetailComponent },
+      { path: 'post', component: PostComponent }
     ]
   }
 ];

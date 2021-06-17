@@ -5,9 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { Angular2TokenService } from 'angular2-token';
-
-
-
+import { PostService } from './service/post.service';
 import { HttpService } from './service/http.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -39,6 +37,7 @@ import { HomeModule } from './home/home.module'
   ],
   providers: [
     HttpService,
+    PostService,
     Angular2TokenService
   ],
   bootstrap: [AppComponent],
