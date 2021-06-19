@@ -13,7 +13,7 @@ const routes: Routes = [
       { path: '', component: SubComponent },
       { path: 'ex', component: ExComponent },
       { path: 'detail/:id', component: SubDetailComponent },
-      { path: 'post', component: PostComponent }
+      { path: 'post-cat', component: PostComponent }
     ]
   }
 ];
