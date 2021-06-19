@@ -17,6 +17,8 @@ import { SubComponent } from './sub/sub.component';
 import { SubDetailComponent } from './sub-detail/sub-detail.component';
 import { PostComponent } from './post/post.component';
 import { PostShowComponent } from './post-show/post-show.component';
+import { PostCatComponent } from './post-cat/post-cat.component';
+import { ShowCatComponent } from './show-cat/show-cat.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { PostShowComponent } from './post-show/post-show.component';
     SubDetailComponent,
     PostComponent,
     PostShowComponent,
+    PostCatComponent,
+    ShowCatComponent,
   ],
   imports: [
     CommonModule,
