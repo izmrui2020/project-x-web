@@ -2,7 +2,7 @@
     margin-bottom: 0;
 }
 .page-header{
-    background-color: #B2AFAB;
+    background-color: #f7f6f5;
     background-position: center center;
     background-size: cover;
     min-height: 100vh;
@@ -184,20 +184,20 @@
     font-size: 8em;
     font-weight: 700;
     margin: 0;
-    color: #FFFFFF;
+    color: #000000;
     // background: #fbf8ec;
-    background: -moz-linear-gradient(to bottom, #FFFFFF 35%, #4e6773 100%);
-    background: -webkit-linear-gradient(to bottom, #FFFFFF 35%,#4e6773 100%);
-    background: -ms-linear-gradient(to bottom, #FFFFFF 35%,#4e6773 100%);
-    background: -o-linear-gradient(to bottom, #FFFFFF 35%,#4e6773 100%);
-    background: linear-gradient(to bottom, #FFFFFF 35%,#4e6773 100%);
+    background: -moz-linear-gradient(to bottom, #000000 35%, #4e6773 100%);
+    background: -webkit-linear-gradient(to bottom, #000000 35%,#4e6773 100%);
+    background: -ms-linear-gradient(to bottom, #000000 35%,#4e6773 100%);
+    background: -o-linear-gradient(to bottom, #000000 35%,#4e6773 100%);
+    background: linear-gradient(to bottom, #000000 35%,#4e6773 100%);
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .presentation-subtitle{
     font-size: 1.7em;
-    color: #FFFFFF;
+    color: #000000;
 }
 
 .category-absolute{
