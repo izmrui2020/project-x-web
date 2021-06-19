@@ -18,4 +18,9 @@ export class PostService {
     return this.http.get(this.postUrl)
       .pipe(map((response: Response[]) => <Post[]>response))
   }
+
+  get_one_post(id: number) {
+    return this.http.get(this.postUrl + "/" + id + '.json')
+  }
+
 }
