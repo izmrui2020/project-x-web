@@ -18,7 +18,7 @@ export class PostComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let timer = interval(5000);
+    let timer = interval(1000);
     timer.subscribe(() => this.getPost());
   }
 
@@ -26,5 +26,7 @@ export class PostComponent implements OnInit {
     this.ps.getPosts()
       .subscribe(posts => this.posts = posts );
   }
+
+
 
 }

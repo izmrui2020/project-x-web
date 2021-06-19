@@ -16,6 +16,7 @@ import { ExComponent } from '../home/ex/ex.component';
 import { SubComponent } from './sub/sub.component';
 import { SubDetailComponent } from './sub-detail/sub-detail.component';
 import { PostComponent } from './post/post.component';
+import { PostShowComponent } from './post-show/post-show.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { PostComponent } from './post/post.component';
     SubComponent,
     SubDetailComponent,
     PostComponent,
+    PostShowComponent,
   ],
   imports: [
     CommonModule,

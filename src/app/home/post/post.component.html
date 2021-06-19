@@ -1,10 +1,12 @@
-<div class="post-list" *ngFor="let post of posts">
-  <div>
+<div class="card" *ngFor="let post of posts" style="width: 18rem;">
+  <div class="card-body">
     {{post.title}}
   </div>
-  <small><strong>Post ID:</strong> {{post.id}}</small>
+  <small><strong>Post ID:</strong> {{post.id | date:'medium'}}</small>
 
-  <p>
+  <p class="card-text">
     <small>Last Updated: {{post.update_at}}</small>
   </p>
 </div>
+
+
