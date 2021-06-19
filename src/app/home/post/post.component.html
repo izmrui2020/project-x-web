@@ -1,4 +1,5 @@
 <div class="card" *ngFor="let post of posts" style="width: 18rem;">
+  <a (click)="goToShow">
   <div class="card-body">
     {{post.title}}
   </div>
@@ -7,6 +8,7 @@
   <p class="card-text">
     <small>Last Updated: {{post.update_at}}</small>
   </p>
+  </a>
 </div>
 
 

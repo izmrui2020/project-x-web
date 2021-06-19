@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from "rxjs"
+
+import { Post } from '../post/post';
+import { PostService } from '../../service/post.service';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-post-show',
@@ -7,9 +14,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostShowComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+  routeId: any;
 
-  ngOnInit(): void {
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private postservice: PostService,
+  ) { }
+
+  @Input() post; Post
+  ngOnInit() {
+    this.routeId = this.route.params.subscribe(
+      params => {
+        this.id = +params['id'];
+      })
+    // let postRequest = this.route.params
+    //   // .((params: Params) =>
+    //     this.postservice.get_one_post(+params['id']));
+    // postRequest.subscribe(
+    //   response => this.postservice = response.json())
   }
 
 }

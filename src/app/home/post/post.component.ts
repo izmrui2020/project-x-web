@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, interval } from 'rxjs';
+import { Router } from '@angular/router';
+
 import { Post } from './post';
 import { PostService } from '../../service/post.service';
-
 
 @Component({
   selector: 'app-post',
@@ -14,7 +15,8 @@ export class PostComponent implements OnInit {
   posts: Post[];
 
   constructor(
-    private ps: PostService
+    private ps: PostService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -27,6 +29,9 @@ export class PostComponent implements OnInit {
       .subscribe(posts => this.posts = posts );
   }
 
-
+  goToShow(post: Post): void {
+    let postLink = ['/posts', post.id];
+    this.router.navigate(postLink);
+  }
 
 }
