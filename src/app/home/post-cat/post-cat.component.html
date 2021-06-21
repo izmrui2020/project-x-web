@@ -1,6 +1,7 @@
 <a href="/" class="nav-link px-2">aaaaaaaa</a>
 
-<div>
+<div class="row">
+  <h2 class="text-center">Keep in touch?</h2>
   <form [formGroup]="new_post" (ngSubmit)="upload()">
 
     <div class="preview" *ngIf="imgFile">
@@ -17,7 +18,7 @@
 
     <div class="form-group">
       <label for="description">コメント</label>
-      <input class="form-control" id="file" formControlName="file" type="text">
+      <input class="form-control" placeholder="Tell us your thoughts and feelings..." id="exampleFormControlTextarea1" formControlName="file" type="text">
       <div *ngIf="uf.name.touched && uf.name.invalid" class="alert alert-danger">
         <div *ngIf="uf.name.errors.required">description is required.</div>
       </div>
@@ -31,7 +32,7 @@
       </div>
     </div>
 
-    <button class="btn btn-success" type="submit">Upload File</button>
+    <button class="btn btn-primary" type="submit">Upload File</button>
 
   </form>
 </div>
