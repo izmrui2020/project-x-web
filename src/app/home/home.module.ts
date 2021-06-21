@@ -1,6 +1,7 @@
 //import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 //import { SidebarModule } from 'ng-sidebar';
@@ -36,6 +37,8 @@ import { ShowCatComponent } from './show-cat/show-cat.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   //bootstrap: [HomeComponent]
