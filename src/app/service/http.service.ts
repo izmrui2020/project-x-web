@@ -48,5 +48,13 @@ export class HttpService {
     return this.http.get(this.URL + '', this.httpOptions)
   }
 
+  public catPost(get) {
+    return this.http.post('http://localhost:8888/file-upload.php', get.value)
+      .subscribe(response => {
+        alert('Image has been uploaded.');
+      })
+
+  }
+
 
 }

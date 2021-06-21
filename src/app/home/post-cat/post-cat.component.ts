@@ -47,10 +47,7 @@ export class PostCatComponent implements OnInit {
 
   upload(){
     console.log(this.new_post.value);
-    this.hs.post('http://localhost:8888/file-upload.php', this.new_post.value)
-      .subscribe(response => {
-        alert('Image has been uploaded.');
-      })
+    this.hs.catPost(this.new_post.value)
   }
 
   ngOnInit(): void {
