@@ -14,7 +14,7 @@ import { HeaderComponent } from '../common/header/header.component';
 //import { SignUpComponent } from './account/sign-up/sign-up.component';
 
 import { ExComponent } from '../home/ex/ex.component';
-import { SubComponent } from './sub/sub.component';
+import { ProductListComponent } from './product-list/product-list.component';
 import { SubDetailComponent } from './sub-detail/sub-detail.component';
 import { PostComponent } from './post/post.component';
 import { PostShowComponent } from './post-show/post-show.component';
@@ -27,7 +27,7 @@ import { ShowCatComponent } from './show-cat/show-cat.component';
     HeaderComponent,
     HomeComponent,
     ExComponent,
-    SubComponent,
+    ProductListComponent,
     SubDetailComponent,
     PostComponent,
     PostShowComponent,

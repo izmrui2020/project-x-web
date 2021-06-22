@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-sub',
-  templateUrl: './sub.component.html',
-  styleUrls: ['./sub.component.scss']
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.scss']
 })
-export class SubComponent implements OnInit {
+export class ProductListComponent implements OnInit {
 
   imagePath: any = "../../ii"
 

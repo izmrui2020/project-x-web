@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { SubComponent } from '../sub/sub.component';
+import { ProductListComponent } from '../product-list/product-list.component';
 
 import { lists } from './sublists';
 
