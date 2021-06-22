@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
-
 import { Angular2TokenService } from 'angular2-token';
 import { PostService } from './service/post.service';
 import { HttpService } from './service/http.service';
@@ -34,7 +32,6 @@ import { HomeModule } from './home/home.module'
     FormsModule,
     ReactiveFormsModule,
     HomeModule,
- //   SidebarModule.forRoot()
   ],
   providers: [
     HttpService,

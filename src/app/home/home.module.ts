@@ -2,16 +2,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
-
-//import { SidebarModule } from 'ng-sidebar';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { HomeRoutingModule } from '../home/home-routing.modue';
 import { HomeComponent } from '../home/home.component';
 import { HeaderComponent } from '../common/header/header.component';
-
-//import { LoginComponent } from './account/login/login.component';
-//import { SignUpComponent } from './account/sign-up/sign-up.component';
 
 import { ExComponent } from '../home/ex/ex.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -39,9 +34,9 @@ import { ShowCatComponent } from './show-cat/show-cat.component';
     HomeRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    NgxPaginationModule,
   ],
   providers: [],
   //bootstrap: [HomeComponent]
-  //exports:[ HomeComponent ]
 })
 export class HomeModule { }
