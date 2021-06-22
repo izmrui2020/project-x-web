@@ -9,7 +9,11 @@ export class ProductListComponent implements OnInit {
 
   imagePath: any = "../../ii"
 
-  sublists: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  sublists: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+
+  title: string = 'hello';
+  description: string = 'samplesamplesamplesamplesamplesamplesamplesamplesamp\
+  lesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesample';
 
   constructor() { }
 
