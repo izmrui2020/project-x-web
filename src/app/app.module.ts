@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { Angular2TokenService } from 'angular2-token';
 import { PostService } from './service/post.service';
 import { HttpService } from './service/http.service';
+import { AccountService } from './service/account.service';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './common/footer/footer.component';
@@ -34,6 +35,7 @@ import { HomeModule } from './home/home.module'
   ],
   providers: [
     HttpService,
+    AccountService,
     PostService,
     Angular2TokenService
   ],

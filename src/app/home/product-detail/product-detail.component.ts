@@ -13,20 +13,22 @@ import { lists } from '../../../assets/mock/sublists';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product: ProductDto;
+  product: ProductDto = null;
 
   constructor(
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit(): void {
-    this.get_detail();
+  ngOnInit() {
+    setTimeout(() => {
+      this.get_detail();
+    }, 2000);
   }
 
-  get_detail(): void {
+  get_detail() {
     const id =
     this.route.paramMap.subscribe(params => {
-      this.product = lists[+params.get('listId')]
+      this.product = lists[+params.get('listId')] //[+params.get('listId')] = 0になる
       console.log("listId = ", this.product)
     })
   }
