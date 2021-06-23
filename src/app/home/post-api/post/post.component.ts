@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, interval } from 'rxjs';
 import { Router } from '@angular/router';
 
-import { Post } from '../../service/class-dto/post-dto';
-import { PostService } from '../../service/post.service';
+import { Post } from '../../../models/post-dto';
+import { PostService } from '../../../service/post.service';
 
 @Component({
   selector: 'app-post',

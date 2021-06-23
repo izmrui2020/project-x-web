@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="title">商品詳細</div>
+  <div class="product-detail-container">
+    <div class="waiting-for-products" *ngIf="product === null; else productList">
+      取得しています...
+    </div>
+    <ng-template #productList>
+      <div class="param-line">
+        <div class="label">ID</div>
+        <div class="value">{{ product.id }}<br></div>
+      </div>
+      <div class="param-line">
+        <div class="label">名前</div>
+        <div class="value">{{ product.name }}<br></div>
+      </div>
+      <div class="param-line">
+        <div class="label">説明</div>
+        <div class="value">{{ product.description }}<br></div>
+      </div>
+    </ng-template>
+  </div>
+  <div class="footer">
+    <div class="button black" routerLink="/home">商品一覧へ</div>
+  </div>
+</div>
+

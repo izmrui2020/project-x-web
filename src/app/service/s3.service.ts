@@ -25,6 +25,12 @@ export class S3Service {
     // this.s3 = new AWS.S3(clientParams);
   }
 
+/**
+ *
+ *
+ *
+ *
+ * */
   uploadFile(file: any): Promise<any> {
     const params = {
       Bucket: environment.bucketName,
@@ -35,6 +41,5 @@ export class S3Service {
       ACL: 'private' };
     return this.s3.upload(params).promise();
   }
-
 
 }

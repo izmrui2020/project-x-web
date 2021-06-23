@@ -4,7 +4,7 @@ import { Observable,from, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 
-import { Post } from './class-dto/post-dto';
+import { Post } from '../models/post-dto';
 
 @Injectable()
 export class PostService {
