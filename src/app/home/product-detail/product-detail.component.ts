@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ProductListComponent } from '../product-list/product-list.component';
+import { ProductDto } from '../../models/product-dto';
 
 import { lists } from '../../../assets/mock/sublists';
 
@@ -12,7 +13,7 @@ import { lists } from '../../../assets/mock/sublists';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product
+  product: ProductDto;
 
   constructor(
     private route: ActivatedRoute
@@ -26,7 +27,7 @@ export class ProductDetailComponent implements OnInit {
     const id =
     this.route.paramMap.subscribe(params => {
       this.product = lists[+params.get('listId')]
-      console.log("listId = ", lists)
+      console.log("listId = ", this.product)
     })
   }
 

@@ -1,22 +1,42 @@
 export const lists = [
   {
+    id: 0,
     name: 'Phone XL',
-    price: 799,
     description: 'A large phone with one of the best screens'
   },
   {
+    id: 1,
     name: 'Phone Mini',
-    price: 699,
     description: 'A great phone with one of the best cameras'
   },
   {
+    id: 2,
     name: 'Phone Standard',
-    price: 299,
     description: 'bbbbbbbbbbbbbbbbbbbb'
   },
   {
+    id: 3,
     name: 'Phone hoge',
-    price: 252,
+    description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+  },
+  {
+    id: 4,
+    name: 'Phone hoge',
+    description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+  },
+  {
+    id: 5,
+    name: 'Phone hoge',
+    description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+  },
+  {
+    id: 6,
+    name: 'Phone hoge',
+    description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+  },
+  {
+    id: 7,
+    name: 'Phone hoge',
     description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
   }
 ];
