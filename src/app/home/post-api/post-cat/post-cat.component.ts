@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
-import { HttpService } from '../../service/http.service'
+import { HttpService } from '../../../service/http.service'
 
 @Component({
   selector: 'app-post-cat',

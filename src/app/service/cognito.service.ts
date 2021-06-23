@@ -29,6 +29,12 @@ export class CognitoService {
   this.userPool = new CognitoUserPool(this.poolData);
   }
 
+/**
+ *
+ *
+ *
+ *
+ * */
   signUp(username: string, password: string): Promise<any> {
     const dataEmail = { Name: 'email', Value: username };
     const attributeList = [];
@@ -44,6 +50,12 @@ export class CognitoService {
     });
   }
 
+/**
+ *
+ *
+ *
+ *
+ * */
   confirmation(username: string, confirmation_code: string): Promise<any> {
     const userData = { Username: username, Pool: this.userPool };
     const cognitoUser = new CognitoUser(userData);

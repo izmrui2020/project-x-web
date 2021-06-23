@@ -22,15 +22,13 @@ export class HttpService {
 
   }
 
-//////////////////////////////////////////////////////////////////////////
-  /**
-   *
-   * @param operation - 失敗した操作の名前
-   * @param result - observableな結果として返す任意の値
-   * 失敗したHttp操作を処理します。
-   * アプリを持続させます。*/
-
-   handleError<T>(operation = 'operation', result?: T) {
+/**
+ *
+ * @param operation - 失敗した操作の名前
+ * @param result - observableな結果として返す任意の値
+ * 失敗したHttp操作を処理します。
+ * アプリを持続させます。*/
+  handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
       //TODO: リモート上のロギング基盤にエラーを送信する
@@ -44,10 +42,22 @@ export class HttpService {
     };
   }
 
+/**
+ *
+ *
+ *
+ *
+ * */
   public getlist() {
     return this.http.get(this.URL + '', this.httpOptions)
   }
 
+/**
+ *
+ *
+ *
+ * 新規登録サービス
+ * */
   public catPost(get) {
     return this.http.post('http://localhost:8888/file-upload.php', get.value)
       .subscribe(response => {
@@ -55,6 +65,5 @@ export class HttpService {
       })
 
   }
-
 
 }

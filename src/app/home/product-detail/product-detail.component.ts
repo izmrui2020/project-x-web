@@ -6,11 +6,11 @@ import { ProductListComponent } from '../product-list/product-list.component';
 import { lists } from '../../service/class-dto/sublists';
 
 @Component({
-  selector: 'app-sub-detail',
-  templateUrl: './sub-detail.component.html',
-  styleUrls: ['./sub-detail.component.scss']
+  selector: 'app-product-detail',
+  templateUrl: './product-detail.component.html',
+  styleUrls: ['./product-detail.component.scss']
 })
-export class SubDetailComponent implements OnInit {
+export class ProductDetailComponent implements OnInit {
 
   product
 
