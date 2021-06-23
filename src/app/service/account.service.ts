@@ -4,8 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { HttpService } from './http.service';
 
-import { LoginUserDto } from './class-dto/login-user-dto';
-import { NewUserDto } from './class-dto/new-user-dto';
+import { LoginUserDto } from '../models/login-user-dto';
+import { NewUserDto } from '../models/new-user-dto';
 
 
 @Injectable({

@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs"
 
-import { Post } from '../../../service/class-dto/post-dto';
+import { Post } from '../../../models/post-dto';
 import { PostService } from '../../../service/post.service';
 import { Input } from '@angular/core';
 

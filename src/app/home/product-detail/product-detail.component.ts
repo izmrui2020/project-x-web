@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { ProductListComponent } from '../product-list/product-list.component';
 
-import { lists } from '../../service/class-dto/sublists';
+import { lists } from '../../../assets/mock/sublists';
 
 @Component({
   selector: 'app-product-detail',
