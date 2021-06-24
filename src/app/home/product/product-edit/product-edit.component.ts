@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 import { ProductService } from '../product.service';
 import { ProductDto } from '../../../models/product-dto';
@@ -26,6 +26,10 @@ export class ProductEditComponent implements OnInit {
     private productservice: ProductService,
   ) { }
 
+  get name() { return this.productForm.get('name'); }
+  get description() { return this.productForm.get('desctiption'); }
+  //表示されない
+
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       this.productservice.get(params['id'])
@@ -36,14 +40,17 @@ export class ProductEditComponent implements OnInit {
             description: product.description,
           })
         });
+        console.log('form=', this.productForm)
     });
   }
 
   saveProduct(): void{
-    const { id, name, description } = this.productForm.getRawValue(); // <= 追加
-    this.productservice.update(new ProductDto(id, name, description));
+    if (this.productForm.valid) {
+      const { id, name, description } = this.productForm.getRawValue(); // <= 追加
+      this.productservice.update(new ProductDto(id, name, description));
 
-    this.router.navigate(['/home', this.productForm.controls.id.value])
+      this.router.navigate(['/home', this.productForm.controls.id.value])
+    }
   }
 
 }
