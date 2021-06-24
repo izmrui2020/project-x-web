@@ -19,4 +19,9 @@ export class ProductService {
   get(id: number): Observable<ProductDto> {
     return of(this.products[id]);
   }
+
+  update(product: ProductDto): void { // <= 追加
+    const index = this.products.findIndex((prd: ProductDto) => prd.id === product.id);
+    this.products[index] = product;
+  }
 }
