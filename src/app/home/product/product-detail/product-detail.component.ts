@@ -13,7 +13,7 @@ import { lists } from '../../../../assets/mock/sublists';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
-
+  mvId: number
   product: ProductDto = null;
 
   constructor(
@@ -33,6 +33,7 @@ export class ProductDetailComponent implements OnInit {
         .subscribe((product: ProductDto) => {
           this.product = product;
           console.log('params', this.product)
+          this.mvId = this.product['id']
         });
       });
     }
