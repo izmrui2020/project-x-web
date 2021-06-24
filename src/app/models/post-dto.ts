@@ -6,7 +6,7 @@ export class Post {
   /** description */
   description: string;
   /** updated_at */
-  updated_at: string;
+  //updated_at?: string;
 
   constructor(
     // public id?: number,

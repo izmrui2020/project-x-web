@@ -15,7 +15,8 @@ import { LoginComponent } from './account/login/login.component';
 import { SignUpComponent } from './account/sign-up/sign-up.component';
 import { TopPageComponent } from './top-page/top-page.component';
 
-import { HomeModule } from './home/home.module'
+import { HomeModule } from './home/home.module';
+
 
 @NgModule({
   declarations: [

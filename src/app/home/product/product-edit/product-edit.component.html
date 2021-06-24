@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="title">商品編集</div>
+    <form class="edit-form" (ngSubmit)="saveProduct()" [formGroup]="productForm">
+      <div class="edit-line">
+        <label>ID</label>
+        <span>{{ productForm.controls.id.value}}</span>
+      </div>
+      <div class="edit-line">
+        <label>名前</label>
+        <input type="text" formControlName="name" required>
+      </div>
+      <div class="edit-line">
+        <label>説明</label>
+        <input type="text" formControlName="description">
+      </div>
+    </form>
+  <div class="footer">
+    <div class="button black" [routerLink]="['/home', productForm.controls.id.value]">保存</div>
+  </div>
+</div>
