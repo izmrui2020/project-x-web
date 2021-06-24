@@ -13,6 +13,7 @@ import { PostComponent } from './post-api/post/post.component';
 import { PostShowComponent } from './post-api/post-show/post-show.component';
 import { PostCatComponent } from './post-api/post-cat/post-cat.component';
 import { ShowCatComponent } from './post-api/show-cat/show-cat.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ShowCatComponent } from './post-api/show-cat/show-cat.component';
     PostShowComponent,
     PostCatComponent,
     ShowCatComponent,
+    ProductEditComponent,
   ],
   imports: [
     CommonModule,

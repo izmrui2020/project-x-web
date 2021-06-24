@@ -7,6 +7,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { PostComponent } from './post-api/post/post.component';
 import { PostCatComponent } from './post-api/post-cat/post-cat.component';
 import { ShowCatComponent } from './post-api/show-cat/show-cat.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
     children: [
       { path: '', component: ProductListComponent },
       { path: 'detail/:id', component: ProductDetailComponent },
+      { path: 'detail/:id/edit', component: ProductEditComponent },
       { path: 'post', component: PostComponent },
       { path: 'post-cat', component: PostCatComponent },
       { path: 'post-cat/show-cat', component: ShowCatComponent }

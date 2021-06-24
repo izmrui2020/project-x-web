@@ -16,7 +16,7 @@ export class PostService {
 
   getPosts(): Observable<Post[]> {
     return this.http.get(this.postUrl)
-      .pipe(map((response: Response[]) => <Post[]>response))
+      .pipe(map((response: Post[]) => <Post[]>response))
   }
 
   getOnePost(id: number) {

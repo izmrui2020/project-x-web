@@ -17,6 +17,7 @@ import { TopPageComponent } from './top-page/top-page.component';
 
 import { HomeModule } from './home/home.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
