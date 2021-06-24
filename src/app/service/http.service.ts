@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+import { lists } from '../../assets/mock/sublists';
+import { ProductDto } from '../models/product-dto';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -64,6 +67,15 @@ export class HttpService {
         alert('Image has been uploaded.');
       })
 
+  }
+
+/**
+ *
+ *
+ *
+ *
+ * */
+  public getProduct() {
   }
 
 }

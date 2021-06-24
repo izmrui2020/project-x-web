@@ -7,9 +7,9 @@
 
 <div class="container">
   <div class="row">
-    <div *ngFor="let list of sublists; let listId = index" class="col-sm">
+    <div *ngFor="let list of sublists; let id = index" class="col-sm">
       <div class="card" style="width: 21rem;">
-        <a routerLink="detail/{{listId}}" class='product-list-a'>
+        <a routerLink="detail/{{id}}" class='product-list-a'>
           <img src="../../../assets/img/cat1.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{ title }}</h5>
