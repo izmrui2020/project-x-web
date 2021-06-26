@@ -1,25 +1,32 @@
 
-<h1>Welcom Oogiri</h1>
-<a routerLink="/proposal">proposal</a>
-<a routerLink="/proposal/new">proposal new</a>
+<div class='container'>
+	<h1 class="headline">Welcom Oogiri</h1>
+  <a routerLink="/proposal">proposal</a>
+  <a routerLink="/proposal/new">proposal new</a>
 
-<div *ngFor="let oogiri of oogiries">
-	<h3>{{ oogiri.title }}</h3>
+	<div class="card" *ngFor="let oogiri of oogiries">
+		<img class="card-img-top" src="{{ oogiri.image_url }}" alt="Card image cap" width="100%">
 
-	<em>{{ oogiri.description }}</em>
+		<div class="card-block">
+			<h4 class="card-title">{{ oogiri.title }}</h4>
 
-  <p>{{ oogiri.oogiri }}</p>
+			<p class="card-text">{{ oogiri.description }}</p>
 
-	<div>
-		<a href="{{ oogiri.file_url }}">Download File</a>
+      <p>{{ oogiri.oogiri }}</p>
+
+			<div>
+				<a class="btn btn-lg btn-primary" href="{{ oogiri.file_url }}">Download File</a>
+			</div>
+
+			<p class="card-text"><small class="text-muted">{{ oogiri.updated_at }}</small></p>
+
+      <p>
+        {{ oogiri.image_url }}
+      </p>
+      <hr>
+
+		</div>
+
 	</div>
 
-	<p>
-		{{ oogiri.updated_at }}
-	</p>
-
-	<p>
-		{{ oogiri.image_url }}
-	</p>
-	<hr>
 </div>
