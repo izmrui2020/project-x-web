@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { HttpService } from './http.service';
+import { HttpService } from '../service/http.service';
 
 import { LoginUserDto } from '../models/login-user-dto';
 import { NewUserDto } from '../models/new-user-dto';
