@@ -19,6 +19,8 @@ import { OogiriListComponent } from './oogiri/oogiri-list/oogiri-list.component'
 import { OogiriDetailComponent } from './oogiri/oogiri-detail/oogiri-detail.component';
 import { OogiriEditComponent } from './oogiri/oogiri-edit/oogiri-edit.component';
 import { ProposalComponent } from './oogiri/proposal/proposal.component';
+import { ProposalNewComponent } from './oogiri/proposal-new/proposal-new.component';
+import { ProposalShowComponent } from './oogiri/proposal-show/proposal-show.component';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { ProposalComponent } from './oogiri/proposal/proposal.component';
     OogiriDetailComponent,
     OogiriEditComponent,
     ProposalComponent,
+    ProposalNewComponent,
+    ProposalShowComponent,
   ],
   imports: [
     CommonModule,

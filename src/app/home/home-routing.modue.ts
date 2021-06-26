@@ -13,6 +13,8 @@ import { OogiriListComponent } from './oogiri/oogiri-list/oogiri-list.component'
 import { OogiriDetailComponent } from './oogiri/oogiri-detail/oogiri-detail.component';
 import { OogiriEditComponent } from './oogiri/oogiri-edit/oogiri-edit.component';
 import { ProposalComponent } from './oogiri/proposal/proposal.component';
+import { ProposalNewComponent } from './oogiri/proposal-new/proposal-new.component';
+import { ProposalShowComponent } from './oogiri/proposal-show/proposal-show.component';
 
 
 const routes: Routes = [
@@ -29,6 +31,8 @@ const routes: Routes = [
       { path: 'oogiri-detail', component: OogiriDetailComponent },
       { path: 'oogiri-edit', component: OogiriEditComponent },
       { path: 'proposal', component: ProposalComponent },
+      { path: 'proposal/new', component: ProposalNewComponent },
+      { path: 'proposal/:id', component:ProposalShowComponent },
     ]
   }
 ];
