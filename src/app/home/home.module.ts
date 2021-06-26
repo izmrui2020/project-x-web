@@ -14,9 +14,11 @@ import { PostShowComponent } from './post-api/post-show/post-show.component';
 import { PostCatComponent } from './post-api/post-cat/post-cat.component';
 import { ShowCatComponent } from './post-api/show-cat/show-cat.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
+
 import { OogiriListComponent } from './oogiri/oogiri-list/oogiri-list.component';
 import { OogiriDetailComponent } from './oogiri/oogiri-detail/oogiri-detail.component';
 import { OogiriEditComponent } from './oogiri/oogiri-edit/oogiri-edit.component';
+import { ProposalComponent } from './oogiri/proposal/proposal.component';
 
 
 @NgModule({
@@ -30,9 +32,11 @@ import { OogiriEditComponent } from './oogiri/oogiri-edit/oogiri-edit.component'
     PostCatComponent,
     ShowCatComponent,
     ProductEditComponent,
+
     OogiriListComponent,
     OogiriDetailComponent,
     OogiriEditComponent,
+    ProposalComponent,
   ],
   imports: [
     CommonModule,
