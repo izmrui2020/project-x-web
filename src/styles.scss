@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-	background-color: #252830;
 	font-family: 'Ubuntu', sans-serif;
 }
 
@@ -36,4 +35,8 @@ body {
 .button-set {
   text-align:center;
   margin-top: 4em;
+}
+
+.container {
+  max-width: 880px;
 }
