@@ -1,4 +1,4 @@
-export interface Document {
+export interface Oogiri {
   id: number,
 	title: string,
   oogiri: string,
