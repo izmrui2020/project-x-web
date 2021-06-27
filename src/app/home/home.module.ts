@@ -36,7 +36,6 @@ import { ProposalShowComponent } from './oogiri/proposal-show/proposal-show.comp
     PostCatComponent,
     ShowCatComponent,
     ProductEditComponent,
-
     OogiriListComponent,
     OogiriDetailComponent,
     OogiriEditComponent,
@@ -50,6 +49,7 @@ import { ProposalShowComponent } from './oogiri/proposal-show/proposal-show.comp
     ReactiveFormsModule,
     FormsModule,
     NgxPaginationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [HomeComponent]
