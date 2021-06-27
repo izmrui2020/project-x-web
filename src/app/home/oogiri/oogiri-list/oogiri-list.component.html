@@ -18,7 +18,7 @@
 				<a class="btn btn-lg btn-primary" href="{{ oogiri.file_url }}">Download File</a>
 			</div>
 
-			<p class="card-text"><small class="text-muted">{{ oogiri.updated_at }}</small></p>
+			<p class="card-text"><small class="text-muted">{{ oogiri.updated_at | date }}</small></p>
 
       <p>
         {{ oogiri.image_url }}
