@@ -14,7 +14,6 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { PostComponent } from './post-api/post/post.component';
 import { PostShowComponent } from './post-api/post-show/post-show.component';
 import { PostCatComponent } from './post-api/post-cat/post-cat.component';
-import { ShowCatComponent } from './post-api/show-cat/show-cat.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 
 import { OogiriListComponent } from './oogiri/oogiri-list/oogiri-list.component';
@@ -34,7 +33,6 @@ import { ProposalShowComponent } from './oogiri/proposal-show/proposal-show.comp
     PostComponent,
     PostShowComponent,
     PostCatComponent,
-    ShowCatComponent,
     ProductEditComponent,
     OogiriListComponent,
     OogiriDetailComponent,
