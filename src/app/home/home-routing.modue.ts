@@ -2,12 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from '../home/home.component';
-import { ProductListComponent } from './product/product-list/product-list.component'
-import { ProductDetailComponent } from './product/product-detail/product-detail.component'
-import { PostComponent } from './post-api/post/post.component';
-import { PostCatComponent } from './post-api/post-cat/post-cat.component';
-import { ProductEditComponent } from './product/product-edit/product-edit.component';
-
 import { OogiriListComponent } from './oogiri/oogiri-list/oogiri-list.component';
 import { OogiriDetailComponent } from './oogiri/oogiri-detail/oogiri-detail.component';
 import { OogiriEditComponent } from './oogiri/oogiri-edit/oogiri-edit.component';
@@ -25,12 +19,6 @@ const routes: Routes = [
       { path: 'proposal', component: ProposalComponent },
       { path: 'proposal/new', component: OogiriNewComponent },
       { path: 'proposal/:id', component:ProposalShowComponent },
-
-      { path: '', component: ProductListComponent },
-      { path: 'detail/:id', component: ProductDetailComponent },
-      { path: 'detail/:id/edit', component: ProductEditComponent },
-      { path: 'post', component: PostComponent },
-      { path: 'post-cat', component: PostCatComponent },
     ]
   }
 ];

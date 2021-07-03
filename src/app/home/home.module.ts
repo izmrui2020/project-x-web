@@ -9,12 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from '../home/home.component';
 import { HeaderComponent } from '../common/header/header.component';
-import { ProductListComponent } from './product/product-list/product-list.component';
-import { ProductDetailComponent } from './product/product-detail/product-detail.component';
-import { PostComponent } from './post-api/post/post.component';
-import { PostShowComponent } from './post-api/post-show/post-show.component';
-import { PostCatComponent } from './post-api/post-cat/post-cat.component';
-import { ProductEditComponent } from './product/product-edit/product-edit.component';
 
 import { OogiriNewComponent } from './oogiri/oogiri-new/oogiri-new.component';
 import { OogiriListComponent } from './oogiri/oogiri-list/oogiri-list.component';
@@ -28,12 +22,6 @@ import { ProposalShowComponent } from './oogiri/proposal-show/proposal-show.comp
   declarations: [
     HeaderComponent,
     HomeComponent,
-    ProductListComponent,
-    ProductDetailComponent,
-    PostComponent,
-    PostShowComponent,
-    PostCatComponent,
-    ProductEditComponent,
     OogiriListComponent,
     OogiriDetailComponent,
     OogiriEditComponent,
