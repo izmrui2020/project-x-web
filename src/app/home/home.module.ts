@@ -16,11 +16,11 @@ import { PostShowComponent } from './post-api/post-show/post-show.component';
 import { PostCatComponent } from './post-api/post-cat/post-cat.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 
+import { OogiriNewComponent } from './oogiri/oogiri-new/oogiri-new.component';
 import { OogiriListComponent } from './oogiri/oogiri-list/oogiri-list.component';
 import { OogiriDetailComponent } from './oogiri/oogiri-detail/oogiri-detail.component';
 import { OogiriEditComponent } from './oogiri/oogiri-edit/oogiri-edit.component';
 import { ProposalComponent } from './oogiri/proposal/proposal.component';
-import { ProposalNewComponent } from './oogiri/oogiri-new/proposal-new.component';
 import { ProposalShowComponent } from './oogiri/proposal-show/proposal-show.component';
 
 
@@ -38,7 +38,7 @@ import { ProposalShowComponent } from './oogiri/proposal-show/proposal-show.comp
     OogiriDetailComponent,
     OogiriEditComponent,
     ProposalComponent,
-    ProposalNewComponent,
+    OogiriNewComponent,
     ProposalShowComponent,
   ],
   imports: [
