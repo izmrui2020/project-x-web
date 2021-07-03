@@ -1,0 +1,64 @@
+<div class="section">
+  <div class="container align-items-center">
+		<h1 class="text-center">投稿する</h1>
+
+			<div>
+				<form [formGroup]="new_post" (ngSubmit)="onSubmit()">
+
+					<div class="form-group">
+						<label for="topic">題名</label>
+						<input  formControlName="topic"
+                    type="text"
+										class="form-control"
+										id="topic"
+										placeholder="お題.."
+										required
+										name="topic"
+						>
+          </div>
+
+          <div >
+            <label for="file">ファイル</label>
+            <input  type="file"
+                    id="file"
+                    formControlName="file"
+                    (change)="onImageChange($event)">
+          </div>
+
+          <div class="preview" *ngIf="imgFile">
+            <img [src]="imgFile" class="img-fluid">
+          </div>
+
+
+					<div class="form-group">
+						<label for="oogiri">回答</label>
+						<input  formControlName="oogiri"
+                    rows='4'
+                    type="text"
+										class="form-control"
+										id="oogiri"
+										placeholder="回答.."
+										required
+										name="oogiri"
+						>
+          </div>
+
+          <div class="form-group">
+            <label for="description">コメント</label>
+            <textarea formControlName="description"
+                      class="form-control"
+                      placeholder="記入してください..."
+                      id="exampleFormControlTextarea1"
+                      rows='4'
+                      type="text">
+            </textarea>
+          </div>
+
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary" type="submit">投稿する</button>
+          </div>
+
+				</form>
+			</div>
+  </div>
+</div>

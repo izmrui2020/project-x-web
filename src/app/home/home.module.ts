@@ -14,14 +14,13 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { PostComponent } from './post-api/post/post.component';
 import { PostShowComponent } from './post-api/post-show/post-show.component';
 import { PostCatComponent } from './post-api/post-cat/post-cat.component';
-import { ShowCatComponent } from './post-api/show-cat/show-cat.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 
 import { OogiriListComponent } from './oogiri/oogiri-list/oogiri-list.component';
 import { OogiriDetailComponent } from './oogiri/oogiri-detail/oogiri-detail.component';
 import { OogiriEditComponent } from './oogiri/oogiri-edit/oogiri-edit.component';
 import { ProposalComponent } from './oogiri/proposal/proposal.component';
-import { ProposalNewComponent } from './oogiri/proposal-new/proposal-new.component';
+import { ProposalNewComponent } from './oogiri/oogiri-new/proposal-new.component';
 import { ProposalShowComponent } from './oogiri/proposal-show/proposal-show.component';
 
 
@@ -34,9 +33,7 @@ import { ProposalShowComponent } from './oogiri/proposal-show/proposal-show.comp
     PostComponent,
     PostShowComponent,
     PostCatComponent,
-    ShowCatComponent,
     ProductEditComponent,
-
     OogiriListComponent,
     OogiriDetailComponent,
     OogiriEditComponent,
@@ -50,6 +47,7 @@ import { ProposalShowComponent } from './oogiri/proposal-show/proposal-show.comp
     ReactiveFormsModule,
     FormsModule,
     NgxPaginationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [HomeComponent]
