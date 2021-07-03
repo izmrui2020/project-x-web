@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProposalNewComponent } from './proposal-new.component';
+import { OogiriNewComponent } from './oogiri-new.component';
 
-describe('ProposalNewComponent', () => {
-  let component: ProposalNewComponent;
-  let fixture: ComponentFixture<ProposalNewComponent>;
+describe('OogiriNewConponent', () => {
+  let component:OogiriNewComponent ;
+  let fixture: ComponentFixture<OogiriNewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProposalNewComponent ]
+      declarations: [OogiriNewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProposalNewComponent);
+    fixture = TestBed.createComponent(OogiriNewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

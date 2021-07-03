@@ -4,11 +4,11 @@ import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms'
 import { Proposal } from '../proposal';
 
 @Component({
-  selector: 'app-proposal-new',
-  templateUrl: './proposal-new.component.html',
-  styleUrls: ['./proposal-new.component.scss']
+  selector: 'app-oogiri-new',
+  templateUrl: './oogiri-new.component.html',
+  styleUrls: ['./oogiri-new.component.scss']
 })
-export class ProposalNewComponent implements OnInit {
+export class OogiriNewComponent implements OnInit {
 
   proposal = new Proposal;
 
