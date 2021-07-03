@@ -5,8 +5,12 @@
 
     <div class="form-group">
       <label for="name">題名</label>
-      <input formControlName="name" class="form-control" id="file" formControlName="file"
-      placeholder="記入してください..." type="text">
+      <input  formControlName="name" 
+              class="form-control" 
+              id="file" 
+              formControlName="file"
+              placeholder="記入してください..." 
+              type="text">
       <div *ngIf="uf.name.touched && uf.name.invalid" class="alert alert-danger">
         <div *ngIf="uf.name.errors.required">Name is required.</div>
       </div>
