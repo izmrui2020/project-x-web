@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { CognitoUserPool, CognitoUserAttribute, CognitoUser, AuthenticationDetails } from 'amazon-cognito-identity-js';
 import * as AWS from 'aws-sdk';
-import { CognitoService } from './cognito.service';
+import { CognitoService } from '../../account/cognito.service';
 
 @Injectable()
 export class S3Service {
