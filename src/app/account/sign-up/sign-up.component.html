@@ -1,6 +1,7 @@
 
-<body class="text-center">
-  <form class="form-horizontal" action='' method="POST">
+<body class="text-center" *ngIf="!successfullySignup">
+  <form class="form-horizontal" [formGroup]="signup_form"
+  (ngSubmit)="onSubmitSignup(signup_form.value)">
     <fieldset>
       <div id="legend">
         <legend class="">新規登録</legend>
@@ -17,7 +18,7 @@
         <!-- E-mail -->
         <label class="control-label" for="email">E-mail</label>
         <div class="controls">
-          <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+          <input type="email" formControlName="email" class="input-xlarge">
         </div>
       </div>
 
@@ -25,7 +26,7 @@
         <!-- Password-->
         <label class="control-label" for="password">Password</label>
         <div class="controls">
-          <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+          <input type="password" formControlName="password" class="input-xlarge">
         </div>
       </div>
 
@@ -49,4 +50,14 @@
       </div>
     </fieldset>
   </form>
+
+  <div class="confirmation" *ngIf="successfullySignup">
+    <form [formGroup]="confirmationForm" (ngSubmit)="onSubmitConfirmation(confirmationForm.value)">
+        <label>Email: </label>
+        <input type="email" formControlName="email">
+      <label>Confirmation Code: </label>
+      <input type="text" formControlName="confirmationCode">
+      <button type="submit">Confirm</button>
+    </form>
+  </div>
 </body>
