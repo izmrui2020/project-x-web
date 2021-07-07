@@ -33,7 +33,8 @@
               "@aws-crypto/sha256-browser",
               "uuid",
               "fast-xml-parser",
-              "@aws-crypto/crc32"
+              "@aws-crypto/crc32",
+              "buffer"
             ],
             "outputPath": "dist/project-x",
             "index": "src/index.html",
