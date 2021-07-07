@@ -34,7 +34,12 @@
               "uuid",
               "fast-xml-parser",
               "@aws-crypto/crc32",
-              "buffer"
+              "buffer",
+              "lodash",
+              "ulid",
+              "lodash/isEqual",
+              "lodash/isEmpty",
+              "lodash/get"
             ],
             "outputPath": "dist/project-x",
             "index": "src/index.html",
