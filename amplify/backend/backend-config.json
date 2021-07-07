@@ -1,1 +1,10 @@
-{}
+{
+  "auth": {
+    "projectangularcf6cce88": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
