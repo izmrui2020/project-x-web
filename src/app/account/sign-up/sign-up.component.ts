@@ -18,6 +18,8 @@ export class SignUpComponent implements OnInit {
     pass2: ['']
   })
 
+  confirmationForm
+
   constructor(
     private http: AccountService,
     private fb: FormBuilder,
@@ -35,7 +37,7 @@ export class SignUpComponent implements OnInit {
     // });
   }
 
-  onSubmitConfirmation(value: any) {
+  onSubmitConfirmation() {
     // const email = value.email, confirmationCode = value.confirmationCode;
     // console.log(email);
     // this.cognito.confirmation(email, confirmationCode)

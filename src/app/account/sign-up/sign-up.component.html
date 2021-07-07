@@ -1,5 +1,6 @@
 
-<body class="text-center" *ngIf="!successfullySignup">
+<!-- <body class="text-center" *ngIf="!successfullySignup"> -->
+<body class="text-center" >
   <form class="form-horizontal" [formGroup]="signup_form"
   (ngSubmit)="onSubmitSignup(signup_form.value)">
     <fieldset>
@@ -51,8 +52,9 @@
     </fieldset>
   </form>
 
-  <div class="confirmation" *ngIf="successfullySignup">
-    <form [formGroup]="confirmationForm" (ngSubmit)="onSubmitConfirmation(confirmationForm.value)">
+  <!-- <div class="confirmation" *ngIf="successfullySignup"> -->
+  <div class="confirmation">
+    <form [formGroup]="confirmationForm" (ngSubmit)="onSubmitConfirmation()">
         <label>Email: </label>
         <input type="email" formControlName="email">
       <label>Confirmation Code: </label>
