@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+/* import AmplifyUIAngularModule  */
+import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 
 import { Angular2TokenService } from 'angular2-token';
 import { PostService } from './service/post.service';
@@ -33,6 +35,8 @@ import { HomeModule } from './home/home.module';
     FormsModule,
     ReactiveFormsModule,
     HomeModule,
+    /* configure app with AmplifyUIAngularModule */
+    AmplifyUIAngularModule,
   ],
   providers: [
     HttpService,
