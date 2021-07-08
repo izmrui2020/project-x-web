@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~aws-amplify-angular/Theme.css';
 
 body {
 	font-family: 'Ubuntu', sans-serif;
@@ -46,5 +47,4 @@ footer {
   max-width: 880px;
 }
 
-/* You can add global styles to this file, and also import other style files */
-@import '~aws-amplify-angular/Theme.css';
+
