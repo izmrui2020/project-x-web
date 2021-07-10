@@ -10,11 +10,12 @@ import Amplify from 'aws-amplify';
 import awsconfig from '../aws-exports';
 /* Configure Amplify resources */
 Amplify.configure(awsconfig);
+// JWT interceptors
+
 
 import { Angular2TokenService } from 'angular2-token';
 import { PostService } from './service/post.service';
 import { HttpService } from './service/http.service';
-import { AccountService } from './account/account.service';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './common/footer/footer.component';
@@ -48,7 +49,6 @@ import { CognitoComponent } from './account/cognito/cognito.component';
   ],
   providers: [
     HttpService,
-    AccountService,
     PostService,
     Angular2TokenService,
     AmplifyService,
