@@ -19,8 +19,6 @@ import { HttpService } from './service/http.service';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './common/footer/footer.component';
-import { LoginComponent } from './account/login/login.component';
-import { SignUpComponent } from './account/sign-up/sign-up.component';
 import { TopPageComponent } from './top-page/top-page.component';
 
 import { HomeModule } from './home/home.module';
@@ -31,8 +29,6 @@ import { CognitoComponent } from './account/cognito/cognito.component';
   declarations: [
     AppComponent,
     FooterComponent,
-    LoginComponent,
-    SignUpComponent,
     TopPageComponent,
     CognitoComponent,
   ],
