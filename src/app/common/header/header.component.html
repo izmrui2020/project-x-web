@@ -10,8 +10,9 @@
 
 
       <div class="text-end">
-        <button type="button" routerLink="" class="btn btn-outline-primary me-2">ログイン</button>
-        <button type="button" routerLink="/sign-up" class="btn btn-outline-primary">新規登録</button>
+        <button type="button" class="btn btn-outline-primary" (click)="onLogoutClick()">ログアウト</button>
+        <button type="button" class="btn btn-outline-primary me-2" (click)="onLoginClick()">ログイン</button>
+        <button type="button" class="btn btn-outline-primary" (click)="onSignupClick()">新規登録</button>
       </div>
     </div>
   </div>

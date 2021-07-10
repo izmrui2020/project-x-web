@@ -8,6 +8,21 @@ import Amplify, { Auth } from 'aws-amplify';
 import amplify from './aws-exports';
 Amplify.configure(amplify);
 
+const oauth = {
+  domain : 'oogiri-auth.auth.ap-northeast-1.amazoncognito.com',
+  scope : ['phone', 'email', 'profile', 'openid','aws.cognito.signin.user.admin'],
+  redirectSignIn : 'http://localhost:4200/home',
+  redirectSignOut : 'http://localhost:4200/home',
+  responseType: 'code',
+  options: {
+      AdvancedSecurityDataCollectionFlag : false
+  }
+}
+
+Auth.configure({
+  oauth:oauth
+});
+
 if (environment.production) {
   enableProdMode();
 }

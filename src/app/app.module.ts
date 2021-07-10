@@ -10,28 +10,27 @@ import Amplify from 'aws-amplify';
 import awsconfig from '../aws-exports';
 /* Configure Amplify resources */
 Amplify.configure(awsconfig);
+// JWT interceptors
+
 
 import { Angular2TokenService } from 'angular2-token';
 import { PostService } from './service/post.service';
 import { HttpService } from './service/http.service';
-import { AccountService } from './account/account.service';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './common/footer/footer.component';
-import { LoginComponent } from './account/login/login.component';
-import { SignUpComponent } from './account/sign-up/sign-up.component';
 import { TopPageComponent } from './top-page/top-page.component';
 
 import { HomeModule } from './home/home.module';
+import { CognitoComponent } from './account/cognito/cognito.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    LoginComponent,
-    SignUpComponent,
     TopPageComponent,
+    CognitoComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +45,6 @@ import { HomeModule } from './home/home.module';
   ],
   providers: [
     HttpService,
-    AccountService,
     PostService,
     Angular2TokenService,
     AmplifyService,
