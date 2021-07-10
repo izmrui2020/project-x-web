@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { environment } from '../../../environments/environment'
+import { Auth } from 'aws-amplify';
 
 @Component({
   selector: 'app-header',
@@ -22,6 +23,15 @@ export class HeaderComponent implements OnInit {
   onSignupClick() {
     const url = environment.HostedUiSignup
     window.location.href = url
+  }
+
+  onLogoutClick() {
+
+    console.log("Logout Clicked");
+
+    Auth.signOut({ global: true })
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
   }
 
 }
