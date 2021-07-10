@@ -6,6 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 /* import AmplifyUIAngularModule  */
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
+import Amplify from 'aws-amplify';
+import awsconfig from '../aws-exports';
+/* Configure Amplify resources */
+Amplify.configure(awsconfig);
 
 import { Angular2TokenService } from 'angular2-token';
 import { PostService } from './service/post.service';
