@@ -23,6 +23,7 @@ import { SignUpComponent } from './account/sign-up/sign-up.component';
 import { TopPageComponent } from './top-page/top-page.component';
 
 import { HomeModule } from './home/home.module';
+import { CognitoComponent } from './account/cognito/cognito.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { HomeModule } from './home/home.module';
     LoginComponent,
     SignUpComponent,
     TopPageComponent,
+    CognitoComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,10 @@ import Amplify, { Auth } from 'aws-amplify';
 import amplify from './aws-exports';
 Amplify.configure(amplify);
 
+Auth.configure({
+  oauth: amplify.awsmobile
+})
+
 if (environment.production) {
   enableProdMode();
 }
