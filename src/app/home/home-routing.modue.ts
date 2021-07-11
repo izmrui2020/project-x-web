@@ -9,15 +9,17 @@ import { ProposalComponent } from './oogiri/proposal/proposal.component';
 import { OogiriNewComponent } from './oogiri/oogiri-new/oogiri-new.component';
 import { ProposalShowComponent } from './oogiri/proposal-show/proposal-show.component';
 
+import { AuthGuard } from '../account/guard/auth.guard';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent,
     children: [
       { path: '', component: OogiriListComponent },
       { path: 'oogiri-detail', component: OogiriDetailComponent },
-      { path: 'oogiri-edit', component: OogiriEditComponent },
       { path: 'proposal', component: ProposalComponent },
-      { path: 'proposal/new', component: OogiriNewComponent },
+      { path: 'oogiri-edit', component: OogiriEditComponent, canActivate: [AuthGuard]},
+      { path: 'proposal/new', component: OogiriNewComponent, canActivate: [AuthGuard] },
       { path: 'proposal/:id', component:ProposalShowComponent },
     ]
   }
