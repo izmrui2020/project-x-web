@@ -7,10 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 import Amplify from 'aws-amplify';
-// import awsconfig from '../aws-exports';
-// /* Configure Amplify resources */
-// Amplify.configure(awsconfig);
-// // JWT interceptors
+import awsconfig from '../aws-exports';
+/* Configure Amplify resources */
+Amplify.configure(awsconfig);
+// JWT interceptors
 
 
 import { Angular2TokenService } from 'angular2-token';
@@ -29,6 +29,7 @@ import { CognitoComponent } from './account/cognito/cognito.component';
   declarations: [
     AppComponent,
     FooterComponent,
+
     TopPageComponent,
     CognitoComponent,
   ],
