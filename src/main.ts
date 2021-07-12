@@ -13,7 +13,7 @@ const oauth = {
   scope : ['phone', 'email', 'profile', 'openid','aws.cognito.signin.user.admin'],
   redirectSignIn : 'http://localhost:4200/home',
   redirectSignOut : 'http://localhost:4200/home',
-  responseType: 'code',
+  responseType: 'token',
   options: {
       AdvancedSecurityDataCollectionFlag : false
   }
