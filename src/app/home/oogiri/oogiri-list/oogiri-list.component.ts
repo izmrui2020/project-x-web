@@ -26,11 +26,11 @@ export class OogiriListComponent implements OnInit {
 
 
   getOogiries() {
-    this.oogirise.getOogiries()
-      .subscribe(
-        res => this.oogiries = res,
-        error => this.errorMessage = <any>error
-      )
+    // this.oogirise.getOogiries()
+    //   .subscribe(
+    //     res => this.oogiries = res,
+    //     error => this.errorMessage = <any>error
+    //   )
   }
 
 }
