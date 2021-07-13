@@ -28,20 +28,54 @@ export class CognitoService {
   }
 
 /**
- *
- *signUp Method
- *
- *
- * */
+ *  @param
+ * signUp Method */
   public signUp(email, password): Observable<any> {
-  return fromPromise(Auth.signUp(email, password));
+    return fromPromise(Auth.signUp(email, password));
   }
 
 /**
- *
- *
- *
- *
- * */
+ *  @param
+ * 検証 */
+  public confirmSignUp(email, code): Observable<any> {
+    return fromPromise(Auth.confirmSignUp(email, code));
+  }
 
+/**
+ *  @param //ここにぱらむ作る。
+ *
+ * ログイン*/
+  public signIn(email, password): Observable<any> {
+    return fromPromise(Auth.signIn(email, password))
+    .pipe(
+      tap(() => this.loggedIn.next(true))
+    );
+  }
+
+/** ログイン状態の取得 */
+  public isAuthenticated(): Observable<boolean> {
+    return fromPromise(Auth.currentAuthenticatedUser())
+    .pipe(
+      map(result => {
+      this.loggedIn.next(true);
+      return true;
+    }),
+    catchError(error => {
+      this.loggedIn.next(false);
+      return of(false);
+      })
+    );
+  }
+
+/** ログアウト */
+  public signOut() {
+    fromPromise(Auth.signOut())
+    .subscribe(
+      result => {
+        this.loggedIn.next(false);
+        this.router.navigate(['/login']);
+      },
+    error => console.log(error)
+    );
+  }
 }
