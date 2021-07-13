@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Proposal } from '../proposal';
+import { Proposal } from '../../home/oogiri/proposal';
 
 @Component({
   selector: 'app-proposal-show',

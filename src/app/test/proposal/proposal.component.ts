@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Proposal } from '../proposal';
+import { Proposal } from '../../home/oogiri/proposal';
 
 @Component({
   selector: 'app-proposal',

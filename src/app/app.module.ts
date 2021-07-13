@@ -29,7 +29,6 @@ import { CognitoComponent } from './account/cognito/cognito.component';
   declarations: [
     AppComponent,
     FooterComponent,
-
     TopPageComponent,
     CognitoComponent,
   ],
