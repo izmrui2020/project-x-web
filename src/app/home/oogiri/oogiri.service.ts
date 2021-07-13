@@ -11,7 +11,7 @@ import { HttpService } from '../../service/http.service';
   providedIn: 'root'
 })
 export class OogiriService {
-  private hosturi = environment.uri; //url: 'http://localhost:3000'
+  private hosturi = environment.API_URL; //url: 'http://localhost:3000'
 
   constructor(
     private http: HttpClient,

@@ -16,12 +16,12 @@ export class HeaderComponent implements OnInit {
   }
 
   onLoginClick() {
-    const url = environment.HostedUiLogin
+    const url = environment.HOSTED_UI_LOGIN
     window.location.href = url
   }
 
   onSignupClick() {
-    const url = environment.HostedUiSignup
+    const url = environment.HOSTED_UI_SIGNUP
     window.location.href = url
   }
 
