@@ -23,19 +23,14 @@ import { TopPageComponent } from './top-page/top-page.component';
 
 import { HomeModule } from './home/home.module';
 import { CognitoComponent } from './account/cognito/cognito.component';
-import { Test1Component } from './test/test1/test1.component';
-import { Test2Component } from './test/test2/test2.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-
     TopPageComponent,
     CognitoComponent,
-    Test1Component,
-    Test2Component,
   ],
   imports: [
     BrowserModule,

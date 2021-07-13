@@ -5,9 +5,9 @@ import { HomeComponent } from '../home/home.component';
 import { OogiriListComponent } from './oogiri/oogiri-list/oogiri-list.component';
 import { OogiriDetailComponent } from './oogiri/oogiri-detail/oogiri-detail.component';
 import { OogiriEditComponent } from './oogiri/oogiri-edit/oogiri-edit.component';
-import { ProposalComponent } from './oogiri/proposal/proposal.component';
+import { ProposalComponent } from '../test/proposal/proposal.component';
 import { OogiriNewComponent } from './oogiri/oogiri-new/oogiri-new.component';
-import { ProposalShowComponent } from './oogiri/proposal-show/proposal-show.component';
+import { ProposalShowComponent } from '../test/proposal-show/proposal-show.component';
 
 import { AuthGuard } from '../account/guard/auth.guard';
 
