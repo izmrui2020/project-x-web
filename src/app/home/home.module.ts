@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from '../home/home.component';
 import { HeaderComponent } from '../common/header/header.component';
-
 import { OogiriNewComponent } from './oogiri/oogiri-new/oogiri-new.component';
 import { OogiriListComponent } from './oogiri/oogiri-list/oogiri-list.component';
 import { OogiriDetailComponent } from './oogiri/oogiri-detail/oogiri-detail.component';

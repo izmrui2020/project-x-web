@@ -5,9 +5,12 @@ import { HomeComponent } from '../home/home.component';
 import { OogiriListComponent } from './oogiri/oogiri-list/oogiri-list.component';
 import { OogiriDetailComponent } from './oogiri/oogiri-detail/oogiri-detail.component';
 import { OogiriEditComponent } from './oogiri/oogiri-edit/oogiri-edit.component';
-import { ProposalComponent } from '../test/proposal/proposal.component';
 import { OogiriNewComponent } from './oogiri/oogiri-new/oogiri-new.component';
+import { UserComponent } from './user/user/user.component';
+
 import { ProposalShowComponent } from '../test/proposal-show/proposal-show.component';
+import { ProposalComponent } from '../test/proposal/proposal.component';
+
 
 import { AuthGuard } from '../account/guard/auth.guard';
 
@@ -17,6 +20,9 @@ const routes: Routes = [
     children: [
       { path: '', component: OogiriListComponent },
       { path: 'oogiries/:oogiriId', component: OogiriDetailComponent },
+      // auth
+      { path: 'oogiri/new', component: OogiriNewComponent, canActivate: [AuthGuard]},
+      { path: 'user', component: UserComponent, canActivate: [AuthGuard]},
       { path: 'oogiri-edit', component: OogiriEditComponent, canActivate: [AuthGuard]},
 
       { path: 'proposal', component: ProposalComponent },
