@@ -16,9 +16,10 @@ const routes: Routes = [
   { path: '', component: HomeComponent,
     children: [
       { path: '', component: OogiriListComponent },
-      { path: 'oogiri-detail', component: OogiriDetailComponent },
-      { path: 'proposal', component: ProposalComponent },
+      { path: 'oogiries/:oogiriId', component: OogiriDetailComponent },
       { path: 'oogiri-edit', component: OogiriEditComponent, canActivate: [AuthGuard]},
+
+      { path: 'proposal', component: ProposalComponent },
       { path: 'proposal/new', component: OogiriNewComponent, canActivate: [AuthGuard] },
       { path: 'proposal/:id', component:ProposalShowComponent },
     ]

@@ -11,7 +11,7 @@
 
 <div class="container">
   <div class="row">
-    <div *ngFor="let oogiri of oogiries; let id = index" class="col-sm" >
+    <div *ngFor="let oogiri of oogiries; let oogiriId = index" class="col-sm" >
       <div class="card">
         <h3 class="card-title">{{ oogiri.title }}</h3>
 
@@ -22,7 +22,7 @@
             <a  href="{{ oogiri.file_url }}">Download File</a>
             <p class="card-text"><small class="text-muted">{{ oogiri.updated_at | date }}</small></p>
             <p>{{ oogiri.image_url }}</p>
-            <a routerLink="/oogiri-detail/{{id}}" class='product-list-a'>詳細</a>
+            <a routerLink="/oogiri/{{oogiriId}}" class='product-list-a'>詳細</a>
           </div>
       </div>
     </div>

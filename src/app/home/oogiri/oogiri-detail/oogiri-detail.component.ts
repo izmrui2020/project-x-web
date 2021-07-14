@@ -10,7 +10,7 @@ import { Oogiri } from '../oogiri-model';
 })
 export class OogiriDetailComponent implements OnInit {
 
-  oogiries: Oogiri[] | undefined;
+  oogiri: Oogiri[] | undefined;
 
   id: number;
   routeId: any;
@@ -20,8 +20,12 @@ export class OogiriDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    const routeParams = this.route.snapshot.paramMap;
+    console.log('routeParams', routeParams)
+    const oogiriIdFromRoute = Number(routeParams.get('oogiriId'));
+
     this.routeId = this.route.params.subscribe((params: any) => {
-      this.id = +params['id'];
+      this.id = +params['oogiriId'];
     })
   }
 
