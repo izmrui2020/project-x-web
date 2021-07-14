@@ -32,6 +32,7 @@ export class CognitoService {
  *  @param
  * signUp Method */
   public signUp(email, password): Observable<any> {
+    this.password = password;
     return fromPromise(Auth.signUp(email, password));
   }
 
@@ -79,4 +80,19 @@ export class CognitoService {
     error => console.log(error)
     );
   }
+
+/**
+ *
+ * ログインユーザ情報の取得 */
+  public getData(): Observable<any> {
+    return fromPromise(Auth.currentAuthenticatedUser())
+  }
+
+/**
+ *
+ * idtokenを取得 */
+  public getIdToken(): string {
+    return Auth.currentSession()['__zone_symbol__value']['idToken']['jwtToken'];
+  }
+
 }
