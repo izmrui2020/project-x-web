@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, interval } from 'rxjs';
 
-import { Oogiri } from '../oogiri';
+import { Oogiri } from '../oogiri-model';
 import { OogiriService } from '../oogiri.service';
 
 @Component({
