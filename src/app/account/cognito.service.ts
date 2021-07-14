@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { Observable, of } from 'rxjs'
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable, of, BehaviorSubject, from } from 'rxjs'
 import { fromPromise } from 'rxjs/observable/fromPromise';
 import { map, tap, catchError } from 'rxjs/operators';
+
 //setting cognito
 import Amplify, {Auth} from 'aws-amplify';
 import awsconfig from '../../aws-exports';
@@ -19,6 +19,7 @@ import { environment } from '../../environments/environment'
 export class CognitoService {
 
   public loggedIn: BehaviorSubject<boolean>;
+  password: String;
 
   constructor(
     private router: Router

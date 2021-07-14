@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+
+import { Oogiri } from '../oogiri-model';
 
 @Component({
   selector: 'app-oogiri-detail',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OogiriDetailComponent implements OnInit {
 
-  constructor() { }
+  oogiries: Oogiri[] | undefined;
 
-  ngOnInit(): void {
+  id: number;
+  routeId: any;
+
+  constructor(
+    private route: ActivatedRoute,
+  ) { }
+
+  ngOnInit() {
+    this.routeId = this.route.params.subscribe((params: any) => {
+      this.id = +params['id'];
+    })
   }
 
 }
