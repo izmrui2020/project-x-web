@@ -24,9 +24,11 @@ export class OogiriDetailComponent implements OnInit {
     console.log('routeParams', routeParams)
     const oogiriIdFromRoute = Number(routeParams.get('oogiriId'));
 
-    this.routeId = this.route.params.subscribe((params: any) => {
-      this.id = +params['oogiriId'];
-    })
+    this.routeId = this.route.params.subscribe(
+      (params: any) => {
+        this.id = +params['oogiriId'];
+      }
+    )
   }
 
 }
