@@ -11,23 +11,36 @@ import { HttpService } from '../../service/http.service';
   providedIn: 'root'
 })
 export class OogiriService {
-  private hosturi = environment.API_URL; //url: 'http://localhost:3000'
+  private URL = environment.API_URL; //url: 'http://localhost:3000'
 
   constructor(
     private http: HttpClient,
     private htservie: HttpService,
   ) { }
 
-  getOogiries(): Observable<Oogiri[]> {
-    return this.http.get(this.hosturi + "/oogiris").pipe(
-      map((res = Response) => {
-        return <Oogiri[]>res;
-      }),
-      //catchError(this.htservie.handleError)
+  public getOogiries(): Observable<any> {
+    return this.http.get<any>(this.URL + "/oogiris")
+      .pipe(
+        map((res = Response) => {
+          return <Oogiri[]>res;
+        }
+      ),
+      catchError(this.handleError('getFile', []))
     )
-
   }
-  // .map((res = Response) => <Oogiri[]>res.json())
-  // .catchError(this.htservie.handleError);
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error); // log to console instead
+
+      this.log(`${operation} failed: ${error.message}`);
+
+      return of(result as T);
+    };
+  }
+
+  private log(message: string) {
+    console.log('petService: ' + message);
+  }
 
 }
