@@ -3,6 +3,7 @@ import { Observable, interval } from 'rxjs';
 
 import { Oogiri } from '../oogiri-model';
 import { OogiriService } from '../oogiri.service';
+import { CognitoService } from '../../../account/cognito.service';
 
 @Component({
   selector: 'app-oogiri-list',
@@ -11,12 +12,13 @@ import { OogiriService } from '../oogiri.service';
 })
 export class OogiriListComponent implements OnInit {
 
+  private token: string;
   oogiries: Oogiri[];
-  mode = "Observable"
   errorMessage: string;
 
   constructor(
-    private oogirise: OogiriService,
+    private _os: OogiriService,
+    private _cs: CognitoService,
   ) { }
 
   ngOnInit() {
@@ -24,13 +26,13 @@ export class OogiriListComponent implements OnInit {
     timer.subscribe(() => this.getOogiries());
   }
 
-
   getOogiries() {
-    // this.oogirise.getOogiries()
-    //   .subscribe(
-    //     res => this.oogiries = res,
-    //     error => this.errorMessage = <any>error
-    //   )
+    this._os.getOogiries()
+      .subscribe(
+        result => {
+          this.oogiries = result;
+          console.log(result);
+        });
   }
 
 }

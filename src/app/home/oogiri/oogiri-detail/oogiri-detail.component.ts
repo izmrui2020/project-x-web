@@ -19,7 +19,7 @@ export class OogiriDetailComponent implements OnInit {
     private route: ActivatedRoute,
   ) { }
 
-  ngOnInit() {
+  ngOnInit() { //どうする？
     const routeParams = this.route.snapshot.paramMap;
     console.log('routeParams', routeParams)
     const oogiriIdFromRoute = Number(routeParams.get('oogiriId'));

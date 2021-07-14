@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 
+import { OogiriService } from '../oogiri.service';
+
 import { Proposal } from '../proposal';
 
 @Component({
@@ -15,15 +17,16 @@ export class OogiriNewComponent implements OnInit {
   imgFile: string;
 
   new_post = this._fb.group({
-    topic: ['', Validators.required],
-    file: ['', Validators.required],
-    oogiri: ['', Validators.required],
-    description: ['', Validators.required],
-    imgSrc: ['', Validators.required]
+    topic:        ['', Validators.required],
+    file:         ['', Validators.required],
+    oogiri:       ['', Validators.required],
+    description:  ['', Validators.required],
+    imgSrc:       ['', Validators.required]
   });
 
   constructor(
     private _fb: FormBuilder,
+    private _oogiri: OogiriService,
   ) { }
 
   get uf(){
@@ -49,6 +52,7 @@ export class OogiriNewComponent implements OnInit {
 
   onSubmit(): void {
     console.log(this.new_post.value);
+    this.new_post
   }
 
   ngOnInit(): void {}

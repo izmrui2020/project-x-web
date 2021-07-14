@@ -23,6 +23,8 @@ import { TopPageComponent } from './top-page/top-page.component';
 
 import { HomeModule } from './home/home.module';
 import { CognitoComponent } from './account/cognito/cognito.component';
+import { LoginComponent } from './account/login/login.component';
+import { SignUpComponent } from './account/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { CognitoComponent } from './account/cognito/cognito.component';
     FooterComponent,
     TopPageComponent,
     CognitoComponent,
+    LoginComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
