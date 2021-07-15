@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitLogin(value: any) {
+    console.log('1', value)
     const email = value.email,
     password = value.password;
     this.cognitose.signIn(email, password)
