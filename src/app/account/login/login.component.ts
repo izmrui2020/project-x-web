@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CognitoService } from '../cognito.service';
 
+import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,6 +12,7 @@ import { CognitoService } from '../cognito.service';
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
+  authState: AuthState;
 
   constructor(
     private _fb: FormBuilder,
