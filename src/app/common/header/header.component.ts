@@ -33,21 +33,21 @@ export class HeaderComponent implements OnInit {
     this.auth.signOut();
   }
 
-  // onLoginClick() {
-  //   const url = environment.HOSTED_UI_LOGIN
-  //   window.location.href = url
-  // }
+  onLoginClick() {
+    const url = environment.HOSTED_UI_LOGIN
+    window.location.href = "/login"
+  }
 
-  // onSignupClick() {
-  //   const url = environment.HOSTED_UI_SIGNUP
-  //   window.location.href = url
-  // }
+  onSignupClick() {
+    const url = environment.HOSTED_UI_SIGNUP
+    window.location.href = "/signup"
+  }
 
-  // onLogoutClick() {
-  //   console.log("Logout Clicked");
-  //   Auth.signOut({ global: true })
-  //     .then(data => console.log(data))
-  //     .catch(err => console.log(err));
-  // }
+  onLogoutClick() {
+    console.log("Logout Clicked");
+    Auth.signOut({ global: true })
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
+  }
 
 }
