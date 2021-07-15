@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 
 import { OogiriService } from '../oogiri.service';
+import { environment } from '../../../../environments/environment'
 
 import { Proposal } from '../proposal';
 
@@ -11,7 +13,7 @@ import { Proposal } from '../proposal';
   styleUrls: ['./oogiri-new.component.scss']
 })
 export class OogiriNewComponent implements OnInit {
-
+  URL = environment.API_URL;
   proposal = new Proposal;
 
   imgFile: string;
@@ -27,13 +29,14 @@ export class OogiriNewComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private _oogiri: OogiriService,
+    private http: HttpClient,
   ) { }
 
   get uf(){
     return this.new_post.controls;
   }
 
-  onImageChange(event): void {
+  onImageChange(event) {
     const reader = new FileReader();
 
     if(event.target.files && event.target.files.length) {
@@ -50,9 +53,13 @@ export class OogiriNewComponent implements OnInit {
     }
   }
 
-  onSubmit(): void {
+  onSubmit() {
     console.log(this.new_post.value);
-    this.new_post
+    this.http.post(URL + '/' , this.new_post.value)
+      .subscribe(res => {
+        console.log(res);
+        alert('Uploaded Successfully.');
+      })
   }
 
   ngOnInit(): void {}
