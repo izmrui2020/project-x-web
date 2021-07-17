@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Observable, interval } from 'rxjs';
 
 import { Oogiri } from '../oogiri-model';
