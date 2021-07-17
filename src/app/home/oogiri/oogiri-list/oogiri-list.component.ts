@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Observable, interval } from 'rxjs';
 
 import { Oogiri } from '../oogiri-model';
@@ -6,6 +6,7 @@ import { OogiriService } from '../oogiri.service';
 import { CognitoService } from '../../../account/cognito.service';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-oogiri-list',
   templateUrl: './oogiri-list.component.html',
   styleUrls: ['./oogiri-list.component.scss']
