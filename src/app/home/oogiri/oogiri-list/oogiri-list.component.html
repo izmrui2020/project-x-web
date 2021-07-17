@@ -32,4 +32,8 @@
 </div>
 
 
-
+<ng-template #myTemplate let-grid>
+  Current page: {{ grid.page }}
+  <input type="number" [(ngModel)]="grid.page" />
+  Total pages: {{ grid.totalPages }}
+</ng-template>

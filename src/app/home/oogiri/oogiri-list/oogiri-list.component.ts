@@ -6,6 +6,7 @@ import { OogiriService } from '../oogiri.service';
 import { CognitoService } from '../../../account/cognito.service';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-oogiri-list',
   templateUrl: './oogiri-list.component.html',
   styleUrls: ['./oogiri-list.component.scss']
