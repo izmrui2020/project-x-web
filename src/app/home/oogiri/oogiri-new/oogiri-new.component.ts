@@ -33,11 +33,11 @@ export class OogiriNewComponent implements OnInit {
     return this.new_post.controls;
   }
 
-  onImageChange(event) {
+  onImageChange(e) {
     const reader = new FileReader();
 
-    if(event.target.files && event.target.files.length) {
-      const [file] = event.target.files;
+    if(e.target.files && e.target.files.length) {
+      const [file] = e.target.files;
       reader.readAsDataURL(file);
 
       reader.onload = () => {
