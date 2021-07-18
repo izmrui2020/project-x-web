@@ -9,6 +9,11 @@ export class UserComponent implements OnInit {
 
   constructor() { }
 
+  delete(): void {
+    // this.heroes = this.heroes.filter(h => h !== hero);
+    // this.heroService.deleteHero(hero.id).subscribe();
+  }
+
   ngOnInit(): void {
   }
 
