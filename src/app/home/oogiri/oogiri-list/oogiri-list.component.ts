@@ -28,12 +28,12 @@ export class OogiriListComponent implements OnInit {
   }
 
   getOogiries() {
-    this._os.getOogiries()
-      .subscribe(
-        result => {
-          this.oogiries = result;
-          console.log(result);
-        });
+    // this._os.getOogiries()
+    //   .subscribe(
+    //     result => {
+    //       this.oogiries = result;
+    //       console.log(result);
+    //     });
   }
 
 }
