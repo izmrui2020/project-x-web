@@ -5,8 +5,6 @@ import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms'
 import { OogiriService } from '../oogiri.service';
 import { environment } from '../../../../environments/environment'
 
-import { Proposal } from '../proposal';
-
 @Component({
   selector: 'app-oogiri-new',
   templateUrl: './oogiri-new.component.html',
@@ -14,16 +12,14 @@ import { Proposal } from '../proposal';
 })
 export class OogiriNewComponent implements OnInit {
   URL = environment.API_URL;
-  proposal = new Proposal;
-
   imgFile: string;
 
   new_post = this._fb.group({
     topic:        ['', Validators.required],
     file:         ['', Validators.required],
     oogiri:       ['', Validators.required],
-    description:  ['', Validators.required],
-    imgSrc:       ['', Validators.required]
+    description:  [''],
+    imgSrc:       ['']
   });
 
   constructor(
@@ -32,6 +28,7 @@ export class OogiriNewComponent implements OnInit {
     private http: HttpClient,
   ) { }
 
+// FormControlsを明示的に扱えるようにする。
   get uf(){
     return this.new_post.controls;
   }
