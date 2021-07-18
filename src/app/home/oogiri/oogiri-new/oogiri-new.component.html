@@ -15,18 +15,28 @@
 										required
 										name="topic"
 						>
+            <div *ngIf="uf.topic.touched && uf.topic.invalid" class="alert alert-danger">
+              <div *ngIf="uf.topic.errors.required">題名は必須項目です。</div>
+            </div>
           </div>
 
           <div >
             <label for="file">ファイル</label>
             <input  type="file"
                     id="file"
+                    accept="image/*"
                     formControlName="file"
-                    (change)="onImageChange($event)">
+                    (change)="onImageChange($event)"
+            >
+            <div *ngIf="uf.file.touched && uf.file.invalid" class="alert alert-danger">
+              <div *ngIf="uf.file.errors.required">画像は必須です。</div>
+            </div>
           </div>
 
           <div class="preview" *ngIf="imgFile">
-            <img [src]="imgFile" class="img-fluid">
+            <img  [src]="imgFile"
+                  class="img-fluid"
+                  style="width:400px; height:250px">
           </div>
 
 
@@ -41,6 +51,9 @@
 										required
 										name="oogiri"
 						>
+            <div *ngIf="uf.oogiri.touched && uf.oogiri.invalid" class="alert alert-danger">
+              <div *ngIf="uf.oogiri.errors.required">回答は必須です。</div>
+            </div>
           </div>
 
           <div class="form-group">
@@ -50,7 +63,8 @@
                       placeholder="記入してください..."
                       id="exampleFormControlTextarea1"
                       rows='4'
-                      type="text">
+                      type="text"
+            >
             </textarea>
           </div>
 
