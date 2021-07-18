@@ -12,12 +12,16 @@ import { HttpService } from '../../service/http.service';
 })
 export class OogiriService {
   private URL = environment.API_URL; //url: 'http://localhost:3000'
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   constructor(
     private http: HttpClient,
     private htservie: HttpService,
   ) { }
 
+/**Get oogiri list */
   public getOogiries(): Observable<any> {
     return this.http.get<any>(this.URL + "/oogiris")
       .pipe(
@@ -29,12 +33,32 @@ export class OogiriService {
     )
   }
 
+/**Post new Oogiri object */
+  public postNewOogiri(values): Observable<any> {
+    return this.http.post<any>(URL + "/", values)
+      .pipe(
+        catchError(this.handleError<any[]>('postNewOogiri', []))
+      )
+  }
+
+/** PUT: サーバー上でヒーローを更新 */
+updateHero() {
+  // return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+  //   tap(_ => this.log(`updated hero id=${hero.id}`)),
+  //   catchError(this.handleError<any>('updateHero'))
+  // );
+}
+
+/**
+ * 失敗したHttp操作を処理します。
+ * アプリを持続させます。
+ * @param operation - 失敗した操作の名前
+ * @param result - observableな結果として返す任意の値
+ */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error); // log to console instead
-
       this.log(`${operation} failed: ${error.message}`);
-
       return of(result as T);
     };
   }

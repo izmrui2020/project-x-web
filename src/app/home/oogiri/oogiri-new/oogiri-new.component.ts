@@ -52,7 +52,7 @@ export class OogiriNewComponent implements OnInit {
 
   onSubmit() {
     console.log(this.new_post.value);
-    this.http.post(URL + '/' , this.new_post.value)
+    this._oogiri.postNewOogiri(this.new_post.value)
       .subscribe(res => {
         console.log(res);
         alert('Uploaded Successfully.');
