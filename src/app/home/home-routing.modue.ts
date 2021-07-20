@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent,
     children: [
       { path: '', component: OogiriListComponent },
-      { path: 'oogiries/:oogiriId', component: OogiriDetailComponent },
+      { path: 'oogiri/:oogiriId', component: OogiriDetailComponent },
       // auth
       { path: 'oogiri/new', component: OogiriNewComponent, canActivate: [AuthGuard]},
       { path: 'user', component: UserComponent, canActivate: [AuthGuard]},

@@ -11,7 +11,7 @@ import { CognitoService } from '../../../account/cognito.service';
   templateUrl: './oogiri-list.component.html',
   styleUrls: ['./oogiri-list.component.scss']
 })
-///tep data
+
 export class OogiriListComponent implements OnInit {
 
   tmpOne: Oogiri = new Oogiri(1, 'title1', 'oogiri1', 'comment1', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
