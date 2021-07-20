@@ -12,15 +12,12 @@
   <div class="row">
     <div *ngFor="let oogiri of oogiries; let oogiriId = index" class="col-sm" >
       <div class="card">
-        <h3 class="card-title">{{ oogiri.title }}</h3>
+        <h2 class="text-center">{{ oogiri.title }}</h2>
 
-          <img src="{{ oogiri.image_url }}" class="card-img-top" alt="...">
+          <img src="{{ oogiri.image_url }}" class="card-img-top" alt="大喜利のテーマとなる写真が挿入されます。">
           <div class="card-body">
-            <h3>{{ oogiri.oogiri }}</h3>
-            <p class="card-text">{{ oogiri.description }}</p>
-            <a  href="{{ oogiri.file_url }}">Download File</a>
+            <h2 class="text-center">{{ oogiri.oogiri }}</h2>
             <p class="card-text"><small class="text-muted">{{ oogiri.updated_at | date }}</small></p>
-            <p>{{ oogiri.image_url }}</p>
             <a routerLink="/oogiri/{{oogiriId}}" class='product-list-a'>詳細</a>
           </div>
       </div>
