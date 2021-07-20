@@ -21,16 +21,23 @@ export class OogiriService {
     private htservie: HttpService,
   ) { }
 
+  oogiriList: Oogiri[];
 /**Get oogiri list */
   public getOogiries(): Observable<any> {
     return this.http.get<any>(this.URL + "/oogiris")
       .pipe(
         map((res = Response) => {
+          this.oogiriList = res;
           return <Oogiri[]>res;
         }
       ),
       catchError(this.handleError('getFile', []))
     )
+  }
+
+/**get specific data object */
+  public getObject(id: number) {
+    return this.oogiriList[id]
   }
 
 /**Post new Oogiri object */

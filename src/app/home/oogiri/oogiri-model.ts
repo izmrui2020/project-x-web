@@ -16,5 +16,7 @@ export class Oogiri {
 		public oogiri: string,
 		public description?: string,
     public image_url?: string,
+    public created_by?: string,
+    public created_at?: string,
 	) {}
 }
