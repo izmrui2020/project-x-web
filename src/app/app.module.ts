@@ -26,6 +26,7 @@ import { CognitoComponent } from './account/cognito/cognito.component';
 import { LoginComponent } from './account/login/login.component';
 import { SignUpComponent } from './account/sign-up/sign-up.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
+import { ExceptionErrorComponent } from './error/exception-error/exception-error.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { NotFoundComponent } from './error/not-found/not-found.component';
     LoginComponent,
     SignUpComponent,
     NotFoundComponent,
+    ExceptionErrorComponent,
   ],
   imports: [
     BrowserModule,
