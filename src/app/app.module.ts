@@ -25,6 +25,7 @@ import { HomeModule } from './home/home.module';
 import { CognitoComponent } from './account/cognito/cognito.component';
 import { LoginComponent } from './account/login/login.component';
 import { SignUpComponent } from './account/sign-up/sign-up.component';
+import { NotFoundComponent } from './error/not-found/not-found.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { SignUpComponent } from './account/sign-up/sign-up.component';
     CognitoComponent,
     LoginComponent,
     SignUpComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

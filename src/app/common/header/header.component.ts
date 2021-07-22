@@ -19,10 +19,11 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.subscription = this.auth.isAuthenticated()
-      .subscribe(result => {
-        this.loggedIn = result;
-      });
+    // this.subscription = this.auth.isAuthenticated()
+    //   .subscribe(result => {
+    //     this.loggedIn = result;
+    //   });
+    this.loggedIn = true;
   }
 
   ngOnDestroy() {
