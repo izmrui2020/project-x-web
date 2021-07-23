@@ -10,8 +10,17 @@ import { CognitoService } from '../../../account/cognito.service';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
+  tmpOne: Oogiri = new Oogiri(1, 'title1', 'oogiri1', 'comment1', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
+	tmpTwo: Oogiri = new Oogiri(2, 'title2', 'oogiri2', 'comment2', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
+	tmpThree: Oogiri = new Oogiri(3, 'title3', 'oogiri3', 'comment3', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
 
-  myOogiries: Oogiri[];
+	myOogiries : Oogiri[] = [
+		this.tmpOne,
+		this.tmpTwo,
+		this.tmpThree
+	]
+
+  //myOogiries: Oogiri[];
 
   constructor() { }
 
