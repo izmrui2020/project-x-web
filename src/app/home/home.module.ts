@@ -5,7 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HomeRoutingModule } from '../home/home-routing.modue';
 import { HttpClientModule } from '@angular/common/http';
-
+import { JwPaginationModule } from 'jw-angular-pagination';
 
 import { HomeComponent } from '../home/home.component';
 import { HeaderComponent } from '../common/header/header.component';
@@ -36,7 +36,8 @@ import { UserComponent } from './user/user/user.component';
     ReactiveFormsModule,
     FormsModule,
     NgxPaginationModule,
-    HttpClientModule
+    HttpClientModule,
+    JwPaginationModule,
   ],
   providers: [],
   bootstrap: [HomeComponent]
