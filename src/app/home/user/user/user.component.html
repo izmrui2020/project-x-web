@@ -5,19 +5,22 @@ hello
 <button class="delete" title="delete hero"
   (click)="delete()">x</button>
 
-<div _ngcontent-c10="" class="owner">
-  <div _ngcontent-c10="" class="avatar">
-    <img _ngcontent-c10="" alt="Circle Image"
-    class="img-circle img-no-padding img-responsive"
-    src="./assets/img/faces/joe-gardner-2.jpg">
-  </div>
-  <div _ngcontent-c10="" class="name">
-    <h4 _ngcontent-c10="" class="title">Jane Faker<br _ngcontent-c10=""></h4>
-    <h6 _ngcontent-c10="" class="description">Music Producer</h6>
+
+<div _ngcontent-c10="" class="container">
+  <div _ngcontent-c10="" class="owner">
+    <div _ngcontent-c10="" class="avatar">
+      <img _ngcontent-c10="" alt="Circle Image"
+      class="img-circle img-no-padding img-responsive"
+      src="../../../../assets/img/cat1.jpg">
+    </div>
+    <div _ngcontent-c10="" class="name">
+      <h4 _ngcontent-c10="" class="title">Jane Faker</h4>
+      <h6 _ngcontent-c10="" class="description">Music Producer</h6>
+    </div>
   </div>
 </div>
 
-
+<h2>自分の投稿</h2>
 <div class="container">
   <div class="row">
     <div *ngFor="let oogiri of myOogiries; let oogiriId = index" class="col-sm" >
@@ -28,9 +31,10 @@ hello
           <div class="card-body">
             <h2 class="text-center">{{ oogiri.oogiri }}</h2>
             <p class="card-text"><small class="text-muted">{{ oogiri.updated_at | date }}</small></p>
-            <a routerLink="/oogiri/{{oogiriId}}" class='product-list-a'>詳細</a>
+            <a routerLink="/oogiri/{{oogiriId}}" class='product-list-a'>編集する。</a>
           </div>
       </div>
     </div>
   </div>
 </div>
+
