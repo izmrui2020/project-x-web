@@ -1,6 +1,6 @@
 <p>user works!</p>
 hello
-<a routerLink='/oogiri-edit'>go edit</a>
+
 
 <button class="delete" title="delete hero"
   (click)="delete()">x</button>
@@ -14,8 +14,9 @@ hello
       src="../../../../assets/img/cat1.jpg">
     </div>
     <div _ngcontent-c10="" class="name">
-      <h4 _ngcontent-c10="" class="title">Jane Faker</h4>
-      <h6 _ngcontent-c10="" class="description">Music Producer</h6>
+      <h4 _ngcontent-c10="" class="title">{{ user.name }}</h4>
+      <h6 _ngcontent-c10="" class="description">{{ user.id }}</h6>
+      <a routerLink="/user/control" class="link-primary">編集する。</a>
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@ import { Oogiri } from '../oogiri-model';
 })
 export class OogiriDetailComponent implements OnInit {
 
-  oogiri: Oogiri[] | undefined;
+  oogiri: Oogiri[];
 
   id: number;
   routeId: any;

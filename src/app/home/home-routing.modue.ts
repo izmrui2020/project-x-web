@@ -7,6 +7,7 @@ import { OogiriDetailComponent } from './oogiri/oogiri-detail/oogiri-detail.comp
 import { OogiriEditComponent } from './oogiri/oogiri-edit/oogiri-edit.component';
 import { OogiriNewComponent } from './oogiri/oogiri-new/oogiri-new.component';
 import { UserComponent } from './user/user/user.component';
+import { UserControlComponent } from './user/user-control/user-control.component';
 
 import { ProposalShowComponent } from '../test/proposal-show/proposal-show.component';
 import { ProposalComponent } from '../test/proposal/proposal.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
       // auth
       { path: 'oogiri/new', component: OogiriNewComponent, canActivate: [AuthGuard]},
       { path: 'user', component: UserComponent, canActivate: [AuthGuard]},
+      { path: 'user/control', component: UserControlComponent, canActivate: [AuthGuard]},
       { path: 'oogiri-edit', component: OogiriEditComponent, canActivate: [AuthGuard]},
 
       { path: 'proposal', component: ProposalComponent },
