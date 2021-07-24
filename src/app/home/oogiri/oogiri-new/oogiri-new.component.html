@@ -15,7 +15,7 @@
 										required
 										name="topic"
 						>
-            <div *ngIf="uf.topic.touched && uf.topic.invalid" class="alert alert-danger">
+            <div *ngIf="f.topic.touched && f.topic.invalid" class="alert alert-danger">
               <div *ngIf="uf.topic.errors.required">題名は必須項目です。</div>
             </div>
           </div>
@@ -28,7 +28,7 @@
                     formControlName="file"
                     (change)="onImageChange($event)"
             >
-            <div *ngIf="uf.file.touched && uf.file.invalid" class="alert alert-danger">
+            <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
               <div *ngIf="uf.file.errors.required">画像は必須です。</div>
             </div>
           </div>
@@ -51,7 +51,7 @@
 										required
 										name="oogiri"
 						>
-            <div *ngIf="uf.oogiri.touched && uf.oogiri.invalid" class="alert alert-danger">
+            <div *ngIf="f.oogiri.touched && f.oogiri.invalid" class="alert alert-danger">
               <div *ngIf="uf.oogiri.errors.required">回答は必須です。</div>
             </div>
           </div>

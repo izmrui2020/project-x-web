@@ -29,7 +29,7 @@ export class OogiriNewComponent implements OnInit {
   ) { }
 
 // FormControlsを明示的に扱えるようにする。
-  get uf(){
+  get f(){
     return this.new_post.controls;
   }
 
