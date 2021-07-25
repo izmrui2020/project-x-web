@@ -45,7 +45,7 @@ export class OogiriListComponent implements OnInit {
   errorMessage: string;
 
   constructor(
-    protected alertService: AlertService,
+    protected _as: AlertService,
     private _os: OogiriService,
     private _cs: CognitoService,
   ) { }

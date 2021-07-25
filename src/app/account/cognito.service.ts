@@ -22,7 +22,7 @@ export class CognitoService {
   password: String;
 
   constructor(
-    private router: Router
+    private _router: Router
   ) {
     Amplify.configure(awsconfig);
     this.loggedIn = new BehaviorSubject<boolean>(false);
@@ -75,7 +75,7 @@ export class CognitoService {
     .subscribe(
       result => {
         this.loggedIn.next(false);
-        this.router.navigate(['/login']);
+        this._router.navigate(['/login']);
       },
     error => console.log(error)
     );

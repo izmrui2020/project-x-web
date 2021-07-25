@@ -16,14 +16,14 @@ export class UserService {
   private URL = environment.API_URL + '/user';
 
   constructor(
-    private http: HttpClient,
+    private _http: HttpClient,
   ) { }
 
   public getUserOogiries(token: string): Observable<any> {
     const httpOptions = {
       headers: { Authorization: token }
     };
-    return this.http.get<any>(this.URL, httpOptions)
+    return this._http.get<any>(this.URL, httpOptions)
       .pipe(
         tap(users => users),
         catchError(this.handleError('getFile', []))
@@ -31,19 +31,19 @@ export class UserService {
   }
 
   getById(id: string) {
-    return this.http.get<User>(`${baseUrl}/${id}`);
+    return this._http.get<User>(`${baseUrl}/${id}`);
   }
 
   create(params: any) {
-    return this.http.post(baseUrl, params);
+    return this._http.post(baseUrl, params);
   }
 
   update(id: string, params: any) {
-    return this.http.put(`${baseUrl}/${id}`, params);
+    return this._http.put(`${baseUrl}/${id}`, params);
   }
 
   delete(id: string) {
-    return this.http.delete(`${baseUrl}/${id}`);
+    return this._http.delete(`${baseUrl}/${id}`);
   }
 
 /////////////////////////////////////////////////
