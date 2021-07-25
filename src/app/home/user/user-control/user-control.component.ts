@@ -30,9 +30,9 @@ export class UserControlComponent implements OnInit {
     this.isAddMode = !this.id;
 
     this.userForm = this._fb.group({
-      username:   ['', Validators.required],
-      userid:     ['', Validators.required],
-      avatar_url: ['', Validators.required],
+      userid:     ['', Validators.required], //[user.id]
+      username:   ['', Validators.required], //[user.name]
+      avatar_url: ['', Validators.required], //[user.acatar_usl] こんな感じでパラメータの取得
       avatarSrc:  ['', Validators.required],
     });
 

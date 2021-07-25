@@ -6,24 +6,29 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { User } from '../_models/user-model';
 
-const baseUrl = `${environment.API_URL}/users`;
+const baseUrl = `${environment.API_URL}/api/v1`;
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private URL = environment.API_URL + '/user';
+  public httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    })
+  }
 
   constructor(
     private _http: HttpClient,
   ) { }
 
   public getUserOogiries(token: string): Observable<any> {
-    const httpOptions = {
-      headers: { Authorization: token }
-    };
-    return this._http.get<any>(this.URL, httpOptions)
+    // const httpOptions = {
+    //   headers: { Authorization: token }
+    // };
+    return this._http.get<any>(`${baseUrl}`)
       .pipe(
         tap(users => users),
         catchError(this.handleError('getFile', []))
@@ -35,7 +40,7 @@ export class UserService {
   }
 
   postNewUser(values): Observable<any> {
-    return this._http.post<any>(baseUrl, values)
+    return this._http.post<any>(`${baseUrl}/users/`, values, this.httpOptions)
     .pipe(
       catchError(this.handleError<any[]>('postNewUser', []))
     )
