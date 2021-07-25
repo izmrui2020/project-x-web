@@ -5,8 +5,8 @@ import { TopPageComponent } from './top-page/top-page.component';
 import { LoginComponent } from './account/login/login.component';
 import { SignUpComponent } from './account/sign-up/sign-up.component';
 
-import { NotFoundComponent } from './error/not-found/not-found.component';
-import { ExceptionErrorComponent } from './error/exception-error/exception-error.component';
+import { NotFoundComponent } from './common/not-found/not-found.component';
+import { ExceptionErrorComponent } from './common/exception-error/exception-error.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/top', pathMatch: 'full' },

@@ -27,6 +27,7 @@ export class UserControlComponent implements OnInit {
 
   ngOnInit() {
     this.id = this._ar.snapshot.params['id'];
+    this.isAddMode = !this.id;
 
     this.userForm = this._fb.group({
       username: ['', Validators.required],
@@ -34,12 +35,24 @@ export class UserControlComponent implements OnInit {
       avatar_url: ['', Validators.required],
       avatarSrc: ['', [Validators.required, Validators.email]],
     });
+
+    if (!this.isAddMode) {
+
+    }
   }
 
   // convenience getter for easy access to form fields
   get f() { return this.userForm.controls; }
 
   onSubmit() {
+
+  }
+
+  private createUser() {
+
+  }
+
+  private updateUser() {
 
   }
 
