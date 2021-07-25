@@ -17,30 +17,31 @@ export class AlertService {
   }
 
   // convenience methods
-  success(message: string, options?: any) {
-      this.alert(new Alert({ ...options, type: AlertType.Success, message }));
+  success(message: string, options?: Partial<Alert>) {
+    this.alert(message, AlertType.Success, options);
   }
 
-  error(message: string, options?: any) {
-      this.alert(new Alert({ ...options, type: AlertType.Error, message }));
+  error(message: string, options?: Partial<Alert>) {
+    this.alert(message, AlertType.Error, options);
   }
 
-  info(message: string, options?: any) {
-      this.alert(new Alert({ ...options, type: AlertType.Info, message }));
+  info(message: string, options?: Partial<Alert>) {
+    this.alert(message, AlertType.Info, options);
   }
 
-  warn(message: string, options?: any) {
-      this.alert(new Alert({ ...options, type: AlertType.Warning, message }));
+  warn(message: string, options?: Partial<Alert>) {
+    this.alert(message, AlertType.Warning, options);
   }
 
   // main alert method
-  alert(alert: Alert) {
-      alert.id = alert.id || this.defaultId;
-      this.subject.next(alert);
+  alert(message: string, type: AlertType, options: Partial<Alert> = {}) {
+    const id = options.id || this.defaultId;
+    const alert = new Alert(id, type, message, options.autoClose, options.keepAfterRouteChange);
+    this.subject.next(alert);
   }
 
   // clear alerts
   clear(id = this.defaultId) {
-      this.subject.next(new Alert({ id }));
+      this.subject.next(new Alert(id));
   }
 }

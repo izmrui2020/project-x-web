@@ -1,5 +1,9 @@
+import { Role } from './role';
+
 export class User {
-  id: number;
+  id: string;
   username: string;
-  token:string;
+  avatar_url: string;
+  //token:string;
+  //role!: Role;
 }

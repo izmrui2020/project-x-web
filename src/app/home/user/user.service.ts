@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
-
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+
+import { environment } from '../../../environments/environment';
+
+const baseUrl = `${environment.API_URL}/users`;
 
 @Injectable({
   providedIn: 'root'
@@ -24,9 +26,22 @@ export class UserService {
       .pipe(
         tap(users => users),
         catchError(this.handleError('getFile', []))
-      );
+    );
   }
 
+  create(params: any) {
+    return this.http.post(baseUrl, params);
+  }
+
+  update(id: string, params: any) {
+    return this.http.put(`${baseUrl}/${id}`, params);
+  }
+
+  delete(id: string) {
+    return this.http.delete(`${baseUrl}/${id}`);
+  }
+
+/////////////////////////////////////////////////
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error); // log to console instead
