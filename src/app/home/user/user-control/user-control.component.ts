@@ -30,10 +30,10 @@ export class UserControlComponent implements OnInit {
     this.isAddMode = !this.id;
 
     this.userForm = this._fb.group({
-      username: ['', Validators.required],
-      userid: ['', Validators.required],
+      username:   ['', Validators.required],
+      userid:     ['', Validators.required],
       avatar_url: ['', Validators.required],
-      avatarSrc: ['', [Validators.required, Validators.email]],
+      avatarSrc:  ['', Validators.required],
     });
 
     if (!this.isAddMode) {
@@ -57,13 +57,13 @@ export class UserControlComponent implements OnInit {
   }
 
   private createUser() {
-    this._us.create(this.userForm.value)
-      .pipe(first())
-      .subscribe(() => {
-        //this.alertService.success('User added', { keepAfterRouteChange: true });
-        this._router.navigate(['../'], { relativeTo: this._ar});
-      })
-      .add(() => this.loading = false);
+    // this._us.create(this.userForm.value)
+    //   .pipe(first())
+    //   .subscribe(() => {
+    //     //this.alertService.success('User added', { keepAfterRouteChange: true });
+    //     this._router.navigate(['../'], { relativeTo: this._ar});
+    //   })
+    //   .add(() => this.loading = false);
   }
 
   private updateUser() {

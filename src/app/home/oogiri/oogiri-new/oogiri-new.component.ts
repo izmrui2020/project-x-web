@@ -56,8 +56,9 @@ export class OogiriNewComponent implements OnInit {
       .subscribe(res => {
         console.log(res);
         alert('Uploaded Successfully.');
-      })
+      }
+    )
   }
 
-  ngOnInit(): void {}
+  ngOnInit(){}
 }

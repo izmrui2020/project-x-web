@@ -34,8 +34,11 @@ export class UserService {
     return this._http.get<User>(`${baseUrl}/${id}`);
   }
 
-  create(params: any) {
-    return this._http.post(baseUrl, params);
+  postNewUser(values): Observable<any> {
+    return this._http.post<any>(baseUrl, values)
+    .pipe(
+      catchError(this.handleError<any[]>('postNewUser', []))
+    )
   }
 
   update(id: string, params: any) {
@@ -46,7 +49,12 @@ export class UserService {
     return this._http.delete(`${baseUrl}/${id}`);
   }
 
-/////////////////////////////////////////////////
+/**
+ * 失敗したHttp操作を処理します。
+ * アプリを持続させます。
+ * @param operation - 失敗した操作の名前
+ * @param result - observableな結果として返す任意の値
+ */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error); // log to console instead

@@ -17,14 +17,14 @@ export class OogiriService {
   };
 
   constructor(
-    private http: HttpClient,
+    private _http: HttpClient,
     private htservie: HttpService,
   ) { }
 
   oogiriList: Oogiri[];
 /**Get oogiri list */
   public getOogiries(): Observable<any> {
-    return this.http.get<any>(this.URL + "/oogiris")
+    return this._http.get<any>(this.URL + "/oogiris")
       .pipe(
         map((res = Response) => {
           this.oogiriList = res;
@@ -42,7 +42,7 @@ export class OogiriService {
 
 /**Post new Oogiri object */
   public postNewOogiri(values): Observable<any> {
-    return this.http.post<any>(URL + "/", values)
+    return this._http.post<any>(URL + "/", values)
       .pipe(
         catchError(this.handleError<any[]>('postNewOogiri', []))
       )

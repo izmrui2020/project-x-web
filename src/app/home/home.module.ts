@@ -17,6 +17,7 @@ import { ProposalComponent } from '../test/proposal/proposal.component';
 import { ProposalShowComponent } from '../test/proposal-show/proposal-show.component';
 import { UserComponent } from './user/user/user.component';
 import { UserControlComponent } from './user/user-control/user-control.component';
+import { UserNewComponent } from './user/user-new/user-new.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { UserControlComponent } from './user/user-control/user-control.component
     ProposalShowComponent,
     UserComponent,
     UserControlComponent,
+    UserNewComponent,
   ],
   imports: [
     CommonModule,
