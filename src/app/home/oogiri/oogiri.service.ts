@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs'
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 
-import { Oogiri } from './oogiri-model';
+import { Oogiri } from '../_models/oogiri-model';
 import { environment } from '../../../environments/environment';
 import { HttpService } from '../../service/http.service';
 

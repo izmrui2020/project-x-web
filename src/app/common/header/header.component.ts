@@ -23,11 +23,12 @@ export class HeaderComponent implements OnInit {
     //   .subscribe(result => {
     //     this.loggedIn = result;
     //   });
-    this.loggedIn = true;
+    this.loggedIn = false;
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    //これを動作させるとエラーになる
+    //this.subscription.unsubscribe();
   }
 
   onClickLogout() {

@@ -16,6 +16,7 @@ import { OogiriEditComponent } from './oogiri/oogiri-edit/oogiri-edit.component'
 import { ProposalComponent } from '../test/proposal/proposal.component';
 import { ProposalShowComponent } from '../test/proposal-show/proposal-show.component';
 import { UserComponent } from './user/user/user.component';
+import { UserControlComponent } from './user/user-control/user-control.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { UserComponent } from './user/user/user.component';
     OogiriNewComponent,
     ProposalShowComponent,
     UserComponent,
+    UserControlComponent,
   ],
   imports: [
     CommonModule,

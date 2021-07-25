@@ -1,0 +1,45 @@
+<header>
+  <style>
+    #intro {
+      background-image: url(../../../assets/img/backgrand.jpg);
+      height: 100vh;
+    }
+
+    @media (min-width: 992px) {
+      #intro {
+        margin-top: -58.59px;
+      }
+    }
+
+    .navbar .nav-link {
+      color: #fff !important;
+    }
+  </style>
+
+  <h1 *ngIf="isAddMode">Add User</h1>
+  <h1 *ngIf="!isAddMode">Edit User</h1>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="bg-white
+  rounded-5 shadow-5-strong p-5">
+      <div class="form-row">
+        <div class="form-outline mb-4">
+          <input formControlName="username" type="text" id="form1Example1" class="form-control" required/>
+          <label class="form-label" for="form1Example1">User name</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-outline mb-4">
+          <input formControlName="userid" type="text" id="form1Example1" class="form-control" required/>
+          <label class="form-label" for="form1Example1">ID</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <button [disabled]="loading" class="btn btn-primary">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              Save
+          </button>
+          <a routerLink="/users" class="btn btn-link">Cancel</a>
+      </div>
+  </form>
+</header>

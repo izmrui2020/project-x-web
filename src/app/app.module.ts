@@ -25,8 +25,9 @@ import { HomeModule } from './home/home.module';
 import { CognitoComponent } from './account/cognito/cognito.component';
 import { LoginComponent } from './account/login/login.component';
 import { SignUpComponent } from './account/sign-up/sign-up.component';
-import { NotFoundComponent } from './error/not-found/not-found.component';
-import { ExceptionErrorComponent } from './error/exception-error/exception-error.component';
+import { NotFoundComponent } from './common/not-found/not-found.component';
+import { ExceptionErrorComponent } from './common/exception-error/exception-error.component';
+import { AlertComponent } from './common/_alert/alert/alert.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ExceptionErrorComponent } from './error/exception-error/exception-error
     SignUpComponent,
     NotFoundComponent,
     ExceptionErrorComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

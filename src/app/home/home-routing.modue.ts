@@ -7,12 +7,14 @@ import { OogiriDetailComponent } from './oogiri/oogiri-detail/oogiri-detail.comp
 import { OogiriEditComponent } from './oogiri/oogiri-edit/oogiri-edit.component';
 import { OogiriNewComponent } from './oogiri/oogiri-new/oogiri-new.component';
 import { UserComponent } from './user/user/user.component';
+import { UserControlComponent } from './user/user-control/user-control.component';
 
 import { ProposalShowComponent } from '../test/proposal-show/proposal-show.component';
 import { ProposalComponent } from '../test/proposal/proposal.component';
 
 
 import { AuthGuard } from '../account/guard/auth.guard';
+import { Auth } from 'aws-amplify';
 
 
 const routes: Routes = [
@@ -21,9 +23,12 @@ const routes: Routes = [
       { path: '', component: OogiriListComponent },
       { path: 'oogiri/:oogiriId', component: OogiriDetailComponent },
       // auth
-      { path: 'oogiri/new', component: OogiriNewComponent, canActivate: [AuthGuard]},
-      { path: 'user', component: UserComponent, canActivate: [AuthGuard]},
-      { path: 'oogiri-edit', component: OogiriEditComponent, canActivate: [AuthGuard]},
+      { path: 'oogiri/new', component: OogiriNewComponent, canActivate: [AuthGuard] },
+      { path: 'oogiri-edit', component: OogiriEditComponent, canActivate: [AuthGuard] },
+      { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
+      // { path: 'user/add', component: UserControlComponent, canActivate: [AuthGuard] },
+      // { path: 'user/edit/:id', component: UserControlComponent, canActivate: [AuthGuard] },
+      { path: 'user/control', component: UserControlComponent, canActivate: [AuthGuard] },
 
       { path: 'proposal', component: ProposalComponent },
       { path: 'proposal/new', component: OogiriNewComponent, canActivate: [AuthGuard] },

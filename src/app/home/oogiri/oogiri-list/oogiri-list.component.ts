@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Observable, interval } from 'rxjs';
 
-import { Oogiri } from '../oogiri-model';
+import { Oogiri } from '../../_models/oogiri-model';
 import { OogiriService } from '../oogiri.service';
 import { CognitoService } from '../../../account/cognito.service';
+import { AlertService } from '../../../common/_alert/alert.service';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -44,6 +45,7 @@ export class OogiriListComponent implements OnInit {
   errorMessage: string;
 
   constructor(
+    protected alertService: AlertService,
     private _os: OogiriService,
     private _cs: CognitoService,
   ) { }
