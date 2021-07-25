@@ -10,12 +10,12 @@ import { HttpService } from '../service/http.service';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private service: HttpService,
+    private _http: HttpService,
   ) { }
 
   ngOnInit(): void {
 
-    const observable = this.service.getlist()
+    const observable = this._http.getlist()
     //new Observable(subscriber => {
     //   subscriber.next(1);
     //   subscriber.next(2);

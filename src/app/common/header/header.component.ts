@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   subscription: Subscription;
 
   constructor(
-    private auth: CognitoService,
+    private _auth: CognitoService,
   ) { }
 
   ngOnInit() {
@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onClickLogout() {
-    this.auth.signOut();
+    this._auth.signOut();
   }
 
   onLoginClick() {

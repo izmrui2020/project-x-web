@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _fb: FormBuilder,
-    private router: Router,
-    private cognitose: CognitoService,
+    private _router: Router,
+    private _cs: CognitoService,
   ) { }
 
   ngOnInit() {
@@ -35,9 +35,9 @@ export class LoginComponent implements OnInit {
     console.log('1', value)
     const email = value.email,
     password = value.password;
-    this.cognitose.signIn(email, password)
+    this._cs.signIn(email, password)
       .subscribe(result => {
-        this.router.navigate(['/user']);
+        this._router.navigate(['/user']);
       },
       error => {
         console.log(error);

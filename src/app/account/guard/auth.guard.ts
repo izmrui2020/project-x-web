@@ -12,19 +12,19 @@ import { CognitoService } from '../cognito.service'
 export class AuthGuard implements CanActivate {
 
   constructor(
-    private guardse: GuardService,
-    private cognitose: CognitoService,
-    private router: Router
+    private _gs: GuardService,
+    private _cs: CognitoService,
+    private _router: Router
   ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      // return this.cognitose.isAuthenticated()
+      // return this._cs.isAuthenticated()
       //   .pipe(
       //     tap(loggedIn => {
       //       if (!loggedIn) {
-      //         this.router.navigate(['/login']);
+      //         this._router.navigate(['/login']);
       //       }
       //     })
       //   )
