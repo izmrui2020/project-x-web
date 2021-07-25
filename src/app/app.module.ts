@@ -27,7 +27,7 @@ import { LoginComponent } from './account/login/login.component';
 import { SignUpComponent } from './account/sign-up/sign-up.component';
 import { NotFoundComponent } from './common/not-found/not-found.component';
 import { ExceptionErrorComponent } from './common/exception-error/exception-error.component';
-import { AlertComponent } from './common/alert/alert.component';
+import { AlertComponent } from './common/_alert/alert/alert.component';
 
 
 @NgModule({
@@ -40,7 +40,7 @@ import { AlertComponent } from './common/alert/alert.component';
     SignUpComponent,
     NotFoundComponent,
     ExceptionErrorComponent,
-    AlertComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
