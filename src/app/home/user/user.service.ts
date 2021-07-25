@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';
+import { User } from '../_models/user-model';
 
 const baseUrl = `${environment.API_URL}/users`;
 
@@ -27,6 +28,10 @@ export class UserService {
         tap(users => users),
         catchError(this.handleError('getFile', []))
     );
+  }
+
+  getById(id: string) {
+    return this.http.get<User>(`${baseUrl}/${id}`);
   }
 
   create(params: any) {

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { first } from 'rxjs/operators';
 
 import { Oogiri } from '../../_models/oogiri-model';
+import { User } from '../../_models/user-model';
 import { UserService } from '../user.service';
 import { CognitoService } from '../../../account/cognito.service';
 
@@ -10,6 +12,7 @@ import { CognitoService } from '../../../account/cognito.service';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
+  users!: User[];
   user = [
     {
       name: 'alexxa',
@@ -29,14 +32,22 @@ export class UserComponent implements OnInit {
 
   //myOogiries: Oogiri[];
 
-  constructor() { }
+  constructor(
+    private _us: UserService,
+  ) { }
 
-  delete(): void {
-    // this.heroes = this.heroes.filter(h => h !== hero);
-    // this.heroService.deleteHero(hero.id).subscribe();
+  ngOnInit() {
+    return this.myOogiries
   }
 
-  ngOnInit(): void {
+  delete(id: string) {
+    const user = this.users.find(x => x.id === id);
+    if (!user) return;
+    //user.isDeletng = true;
+    this._us.delete(id)
+    .pipe(first())
+    .subscribe(() =>
+    this.users = this.users.filter(x => x.id !== id));
   }
 
 }
