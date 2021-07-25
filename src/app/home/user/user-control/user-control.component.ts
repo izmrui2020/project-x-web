@@ -37,7 +37,9 @@ export class UserControlComponent implements OnInit {
     });
 
     if (!this.isAddMode) {
-
+      this._us.getById(this.id)
+        .pipe(first())
+        .subscribe(x => this.userForm.patchValue(x));
     }
   }
 
@@ -45,15 +47,33 @@ export class UserControlComponent implements OnInit {
   get f() { return this.userForm.controls; }
 
   onSubmit() {
-
+    this.submitted = true;
+    this.loading = true;
+      if (this.isAddMode) {
+          this.createUser();
+      } else {
+          this.updateUser();
+      }
   }
 
   private createUser() {
-
+    this._us.create(this.userForm.value)
+      .pipe(first())
+      .subscribe(() => {
+        //this.alertService.success('User added', { keepAfterRouteChange: true });
+        this._router.navigate(['../'], { relativeTo: this._ar});
+      })
+      .add(() => this.loading = false);
   }
 
   private updateUser() {
-
+    this._us.update(this.id, this.userForm.value)
+      .pipe(first())
+      .subscribe(() => {
+        //this.alertService.success('User updated', { keepAfterRouteChange: true });
+        this._router.navigate(['../../'], { relativeTo: this._ar });
+      })
+      .add(() => this.loading = false);
   }
 
 }
