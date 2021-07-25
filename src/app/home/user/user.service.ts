@@ -6,24 +6,29 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { User } from '../_models/user-model';
 
-const baseUrl = `${environment.API_URL}/users`;
+const baseUrl = `${environment.API_URL}/api/v1`;
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private URL = environment.API_URL + '/user';
+  public httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    })
+  }
 
   constructor(
     private _http: HttpClient,
   ) { }
 
   public getUserOogiries(token: string): Observable<any> {
-    const httpOptions = {
-      headers: { Authorization: token }
-    };
-    return this._http.get<any>(this.URL, httpOptions)
+    // const httpOptions = {
+    //   headers: { Authorization: token }
+    // };
+    return this._http.get<any>(`${baseUrl}`)
       .pipe(
         tap(users => users),
         catchError(this.handleError('getFile', []))
@@ -34,8 +39,11 @@ export class UserService {
     return this._http.get<User>(`${baseUrl}/${id}`);
   }
 
-  create(params: any) {
-    return this._http.post(baseUrl, params);
+  postNewUser(values): Observable<any> {
+    return this._http.post<any>(`${baseUrl}/users/`, values, this.httpOptions)
+    .pipe(
+      catchError(this.handleError<any[]>('postNewUser', []))
+    )
   }
 
   update(id: string, params: any) {
@@ -46,7 +54,12 @@ export class UserService {
     return this._http.delete(`${baseUrl}/${id}`);
   }
 
-/////////////////////////////////////////////////
+/**
+ * 失敗したHttp操作を処理します。
+ * アプリを持続させます。
+ * @param operation - 失敗した操作の名前
+ * @param result - observableな結果として返す任意の値
+ */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error); // log to console instead
