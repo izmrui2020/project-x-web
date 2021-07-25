@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Oogiri } from '../../oogiri/oogiri-model';
+import { Oogiri } from '../../_models/oogiri-model';
 import { UserService } from '../user.service';
 import { CognitoService } from '../../../account/cognito.service';
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { Oogiri } from '../oogiri-model';
+import { Oogiri } from '../../_models/oogiri-model';
 
 @Component({
   selector: 'app-oogiri-detail',
