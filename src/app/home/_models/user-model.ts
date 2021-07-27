@@ -2,8 +2,10 @@ import { Role } from './role';
 
 export class User {
   id: string;
-  username: string;
-  avatar_url: string;
+  nickname: string;
+  avatar: {
+    url: string
+  }
   //token:string;
   //role!: Role;
 }

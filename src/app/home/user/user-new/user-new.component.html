@@ -17,19 +17,19 @@
     </div>
 
     <div >
-      <label for="file">アバターの選択：</label>
+      <label for="avatar">アバターの選択：</label>
       <input  type="file"
-              id="file"
+              id="avatar"
               accept="image/*"
-              formControlName="file"
+              formControlName="avatar"
               (change)="onImageChange($event)"
       >
     </div>
 
     <div class="form-row">
       <div class="form-outline mb-4">
-        <input formControlName="username" type="text" id="form1Example1" class="form-control" required/>
-        <label class="form-label" for="form1Example1">User name</label>
+        <input formControlName="nickname" type="text" id="form1Example1" class="form-control" required/>
+        <label class="form-label" for="form1Example1">ニックネーム</label>
       </div>
     </div>
 
