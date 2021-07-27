@@ -33,9 +33,9 @@ export class UserNewComponent implements OnInit {
 
   ngOnInit() {
     this.userForm = this._fb.group({
-      username:   ['', Validators.required],
-      file:       [''],
-      avatarSrc:  ['']
+      nickname:     ['', Validators.required],
+      avatar:       [''],
+      avatarSrc:    ['']
     })
   }
 
@@ -49,6 +49,7 @@ export class UserNewComponent implements OnInit {
       reader.onload = () => {
         this.imgFile = reader.result as string;
         this.userForm.patchValue({
+          //avatar: reader.result
           avatarSrc: reader.result
         });
       console.log(this.judgimg)
