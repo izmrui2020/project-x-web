@@ -81,8 +81,8 @@ export class UserNewComponent implements OnInit {
 
   onSubmit() {
     var formData: any = new FormData();
-    formData.append("nickname", this.userForm.get('nickname').value)
-    formData.append("avatar", this.userForm.get('avatar').value);
+    formData.append("user[nickname]", this.userForm.get('nickname').value)
+    formData.append("user[avatar]", this.userForm.get('avatar').value);
 
     console.log('etc', this.userForm.value, formData)
     this._us.postNewUser(formData)
