@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { UserService } from '../user.service';
+import { RailsUserFormData } from '../rails-user-formdata';
 
 
 @Component({
@@ -37,7 +38,8 @@ export class UserNewComponent implements OnInit {
     return this.userForm.controls;
   }
 
-  ngOnInit() {console.log(this.userForm)}
+  ngOnInit() {
+  }
 
   onImageChange(event) {
     this.judgimg = false;
