@@ -1,6 +1,6 @@
 # ProjectX
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+This project was operationed with [GitHub Flow](https://www.atmarkit.co.jp/ait/articles/1708/01/news015.html#02)
 
 ## Development server
 
