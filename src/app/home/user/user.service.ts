@@ -13,17 +13,20 @@ const baseUrl = `${environment.API_URL}/api/v1`;
 })
 export class UserService {
 
-  public httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'multipart/form-data',
-      //'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-    })
-  }
+  httpOptions
 
   constructor(
     private _http: HttpClient,
-  ) { }
+  ) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        //'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'multipart/form-data',
+        //'Content-Type': 'application/json',
+        //'Access-Control-Allow-Origin': '*',
+      })
+    }
+  }
 
   public getUserOogiries(token: string): Observable<any> {
     // const httpOptions = {
