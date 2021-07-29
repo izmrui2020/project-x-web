@@ -4,7 +4,7 @@ import { first } from 'rxjs/operators';
 import { Oogiri } from '../../_models/oogiri-model';
 import { User } from '../../_models/user-model';
 import { UserService } from '../user.service';
-import { CognitoService } from '../../../account/cognito.service';
+import { CognitoService } from '../../../account/auth/cognito.service';
 
 @Component({
   selector: 'app-user',

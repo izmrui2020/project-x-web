@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CognitoService } from '../cognito.service';
+import { CognitoService } from '../auth/cognito.service';
 
 import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
 
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     console.log('1', value)
     const email = value.email,
     password = value.password;
-    this._cs.signIn(email, password)
+    this._cs.login(email, password)
       .subscribe(result => {
         this._router.navigate(['/user']);
       },

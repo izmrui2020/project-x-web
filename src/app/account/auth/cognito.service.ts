@@ -3,70 +3,59 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of, BehaviorSubject, from } from 'rxjs'
 import { fromPromise } from 'rxjs/observable/fromPromise';
-import { map, tap, catchError } from 'rxjs/operators';
+import { map, tap, catchError, mergeMap } from 'rxjs/operators';
 //setting cognito
 import { Auth } from 'aws-amplify';
+import { CognitoUser } from 'amazon-cognito-identity-js';
+import { AuthProvider } from './auth-provider';
+//import { Store } from '@ngrx/store';
+//import fromAuth, * as authSlice from './auth.slice';
+import { AuthUser } from './cognito-user-model';
 
-//import { AuthProvider } from './auth-provider';
-
-import { environment } from '../../environments/environment'
+import { environment } from '../../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
-export class CognitoService {
+export class CognitoService implements AuthProvider {
 
   public loggedIn: BehaviorSubject<boolean>;
   password: String;
 
   constructor(
-    private _router: Router
+    private _router: Router,
+    //private store: Store<typeof fromAuth>
   ) {
     this.loggedIn = new BehaviorSubject<boolean>(false);
   }
-
   currentAuthenticatedSession$: Observable<{}>;
   isAuthenticated$: Observable<boolean>;
-
-  login(authentication: {}): void {
+  completeNewPassword(password: string): void {
     throw new Error('Method not implemented.');
   }
-  logout(): void {
+  confirmSignIn(code: string): void {
     throw new Error('Method not implemented.');
   }
 
-
-
-
-
-
-/**
- *  @param
- * signUp Method */
+/*************************新規作成***************************/
   public signUp(email, password): Observable<any> {
     this.password = password;
     return fromPromise(Auth.signUp(email, password));
   }
 
-/**
- *  @param
- * 検証 */
+/*************************検証******************************/
   public confirmSignUp(email, code): Observable<any> {
     return fromPromise(Auth.confirmSignUp(email, code));
   }
 
-/**
- *  @param //ここにぱらむ作る。
- *
- * ログイン*/
-  public signIn(email, password): Observable<any> {
+/*************************ログイン***************************/
+  public login(email, password): Observable<any> {
     return fromPromise(Auth.signIn(email, password))
     .pipe(
       tap(() => this.loggedIn.next(true))
     );
   }
-
-/** ログイン状態の取得 */
+/*************************ログイン状態の取得*******************/
   public isAuthenticated(): Observable<boolean> {
     return fromPromise(Auth.currentAuthenticatedUser())
     .pipe(
@@ -81,8 +70,8 @@ export class CognitoService {
     );
   }
 
-/** ログアウト */
-  public signOut() {
+/*************************ログアウト*************************/
+  public logout() {
     fromPromise(Auth.signOut())
     .subscribe(
       result => {
@@ -93,16 +82,14 @@ export class CognitoService {
     );
   }
 
-/**
- *
- * ログインユーザ情報の取得 */
+/**********************User情報の取得************************/
+
   public getData(): Observable<any> {
     return fromPromise(Auth.currentAuthenticatedUser())
   }
 
-/**
- *
- * idtokenを取得 */
+/**********************IdTokenを取得*************************/
+
   public getIdToken(): string {
     return Auth.currentSession()['__zone_symbol__value']['idToken']['jwtToken'];
   }

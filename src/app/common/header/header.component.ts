@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
-import { CognitoService } from '../../account/cognito.service';
+import { CognitoService } from '../../account/auth/cognito.service';
 
 import { environment } from '../../../environments/environment'
 import { Auth } from 'aws-amplify';
@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onClickLogout() {
-    this._auth.signOut();
+    this._auth.logout();
   }
 
   onLoginClick() {

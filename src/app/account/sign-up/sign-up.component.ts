@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CognitoService } from '../cognito.service';
+import { CognitoService } from '../auth/cognito.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -54,7 +54,7 @@ export class SignUpComponent implements OnInit {
           confirmationCode  = value.confirmationCode;
     this._cs.confirmSignUp(email, confirmationCode).subscribe(
       result => {
-        this._cs.signIn(email, this._cs.password).subscribe(
+        this._cs.signUp(email, this._cs.password).subscribe(
           () => {
             this._router.navigate(['/user']);
           },

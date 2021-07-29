@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+// import { StoreModule } from '@ngrx/store';
+// import { EffectsModule } from '@ngrx/effects';
+
 /* import AmplifyUIAngularModule  */
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
@@ -45,6 +48,8 @@ import { AlertComponent } from './common/_alert/alert/alert.component';
     FormsModule,
     ReactiveFormsModule,
     HomeModule,
+    // StoreModule,
+    // EffectsModule,
     /* configure app with AmplifyUIAngularModule */
     AmplifyUIAngularModule,
     AmplifyAngularModule,
