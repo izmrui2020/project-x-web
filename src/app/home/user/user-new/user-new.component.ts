@@ -62,6 +62,21 @@ export class UserNewComponent implements OnInit {
     };
   }
 
+  onSubmit() {
+    var formData: any = new FormData();
+    formData.append("user[nickname]", this.userForm.get('nickname').value)
+    formData.append("user[avatar]", this.userForm.get('avatar').value);
+
+    console.log('etc', this.userForm.value, formData)
+    this._us.postNewUser(formData)
+      .subscribe(res => {
+        console.log(res);
+        alert('Uploaded Successfully.');
+      }
+    )
+    //成功したら、マイページにnicknameとavatar.サムネを引き継いで推移する。
+  }
+
 ///Base64で画像データを送る場合。
   // onImageChange(e) {
   //   this.judgimg = false;
@@ -80,19 +95,4 @@ export class UserNewComponent implements OnInit {
   //     };
   //   }
   // }
-
-  onSubmit() {
-    var formData: any = new FormData();
-    formData.append("user[nickname]", this.userForm.get('nickname').value)
-    formData.append("user[avatar]", this.userForm.get('avatar').value);
-
-    console.log('etc', this.userForm.value, formData)
-    this._us.postNewUser(formData)
-      .subscribe(res => {
-        console.log(res);
-        alert('Uploaded Successfully.');
-      }
-    )
-  }
-
 }

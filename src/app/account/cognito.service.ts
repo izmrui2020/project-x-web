@@ -4,12 +4,10 @@ import { Router } from '@angular/router';
 import { Observable, of, BehaviorSubject, from } from 'rxjs'
 import { fromPromise } from 'rxjs/observable/fromPromise';
 import { map, tap, catchError } from 'rxjs/operators';
-
 //setting cognito
-import Amplify, {Auth} from 'aws-amplify';
-import awsconfig from '../../aws-exports';
-/* Configure Amplify resources */
+import { Auth } from 'aws-amplify';
 
+//import { AuthProvider } from './auth-provider';
 
 import { environment } from '../../environments/environment'
 
@@ -24,9 +22,23 @@ export class CognitoService {
   constructor(
     private _router: Router
   ) {
-    Amplify.configure(awsconfig);
     this.loggedIn = new BehaviorSubject<boolean>(false);
   }
+
+  currentAuthenticatedSession$: Observable<{}>;
+  isAuthenticated$: Observable<boolean>;
+
+  login(authentication: {}): void {
+    throw new Error('Method not implemented.');
+  }
+  logout(): void {
+    throw new Error('Method not implemented.');
+  }
+
+
+
+
+
 
 /**
  *  @param
