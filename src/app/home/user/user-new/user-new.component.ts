@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { UserService } from '../user.service';
+import { CognitoService } from 'src/app/account/auth/cognito.service';
 import { RailsUserFormData } from '../rails-user-formdata';
 
 
@@ -14,6 +15,7 @@ import { RailsUserFormData } from '../rails-user-formdata';
 })
 export class UserNewComponent implements OnInit {
 
+  private token: string;
   userForm: FormGroup;
   imgFile: string;
   avatarSrc: ArrayBuffer;
@@ -25,6 +27,7 @@ export class UserNewComponent implements OnInit {
     private _ar: ActivatedRoute,
     private _router: Router,
     private _us: UserService,
+    private _cs: CognitoService,
   ) {
     this.judgimg = true;
 
@@ -39,6 +42,7 @@ export class UserNewComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.token = this._cs.getIdToken();
   }
 
   onImageChange(event) {

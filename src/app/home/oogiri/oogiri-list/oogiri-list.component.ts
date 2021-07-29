@@ -55,7 +55,6 @@ export class OogiriListComponent implements OnInit {
     // timer.subscribe(() => this.getOogiries());
     this.getOogiries()
   }
-
   getOogiries() {
     return this.oogiries
     // this._os.getOogiries()

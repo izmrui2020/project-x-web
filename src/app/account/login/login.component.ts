@@ -26,16 +26,16 @@ export class LoginComponent implements OnInit {
 
   initForm() {
     this.loginForm = this._fb.group({
-      email:    ['', Validators.required],
-      password: ['', Validators.required]
+      username:     ['', Validators.required],
+      password:     ['', Validators.required]
     })
   }
 
   onSubmitLogin(value: any) {
     console.log('1', value)
-    const email = value.email,
+    const username = value.username,
     password = value.password;
-    this._cs.login(email, password)
+    this._cs.login(username, password)
       .subscribe(result => {
         this._router.navigate(['/user']);
       },

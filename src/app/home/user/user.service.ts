@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
+import { CognitoService } from 'src/app/account/auth/cognito.service';
+
 import { environment } from '../../../environments/environment';
 import { User } from '../_models/user-model';
 
@@ -17,6 +19,7 @@ export class UserService {
 
   constructor(
     private _http: HttpClient,
+    private _cs: CognitoService,
   ) {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -29,10 +32,10 @@ export class UserService {
   }
 
   public getUserOogiries(token: string): Observable<any> {
-    // const httpOptions = {
-    //   headers: { Authorization: token }
-    // };
-    return this._http.get<any>(`${baseUrl}`)
+    const forToken = {
+      headers: { Authorization: token }
+    };
+    return this._http.get<any>(`${baseUrl}`, forToken)
       .pipe(
         tap(users => users),
         catchError(this.handleError('getFile', []))

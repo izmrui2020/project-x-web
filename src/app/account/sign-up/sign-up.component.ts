@@ -26,19 +26,22 @@ export class SignUpComponent implements OnInit {
 
   initForm() {
     this.signupForm = this._fb.group({
+      username: ['', Validators.required],
       email:    ['', Validators.required],
       password: ['', Validators.required]
     });
     this.confirmationForm = this._fb.group({
-      email:            ['', Validators.required],
+      // username:         ['', Validators.required],
+      // email:            ['', Validators.required],
       confirmationCode: ['', Validators.required]
     });
   }
 
   onSubmitSignup(value: any) {
-    const email     = value.email,
+    const username  = value.username,
+          email     = value.email,
           password  = value.password;
-      this._cs.signUp(email, password)
+      this._cs.signUp(username, email, password)
         .subscribe(
           result => {
             this.successfullySignup = true;
@@ -48,13 +51,14 @@ export class SignUpComponent implements OnInit {
           }
         );
   }
-
+  temusername
   onSubmitConfirmation(value: any) {
-    const email             = value.email,
+    const username          = value.username,
+          email             = value.email,
           confirmationCode  = value.confirmationCode;
     this._cs.confirmSignUp(email, confirmationCode).subscribe(
       result => {
-        this._cs.signUp(email, this._cs.password).subscribe(
+        this._cs.signUp(username, email, this._cs.password).subscribe(
           () => {
             this._router.navigate(['/user']);
           },
