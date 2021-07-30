@@ -27,21 +27,22 @@ export class SignUpComponent implements OnInit {
   initForm() {
     this.signupForm = this._fb.group({
       username: ['', Validators.required],
-      email:    ['', Validators.required],
+      email:    ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
     this.confirmationForm = this._fb.group({
-      // username:         ['', Validators.required],
-      // email:            ['', Validators.required],
+      username:         ['', Validators.required],
+      email:            ['', [Validators.required, Validators.email]],
       confirmationCode: ['', Validators.required]
     });
   }
 
-  onSubmitSignup(value: any) {
-    const username  = value.username,
-          email     = value.email,
-          password  = value.password;
-      this._cs.signUp(username, email, password)
+  onSubmitSignup(signupForm: any) {
+    const username  = signupForm.username,
+          email     = signupForm.email,
+          password  = signupForm.password;
+      console.log(username, email, password)
+      this._cs.signUp(username,  password, email)
         .subscribe(
           result => {
             this.successfullySignup = true;
@@ -51,7 +52,7 @@ export class SignUpComponent implements OnInit {
           }
         );
   }
-  temusername
+
   onSubmitConfirmation(value: any) {
     const username          = value.username,
           email             = value.email,
@@ -74,4 +75,7 @@ export class SignUpComponent implements OnInit {
     );
   }
 
+  moveConfimation() {
+    this.successfullySignup = false
+  }
 }
