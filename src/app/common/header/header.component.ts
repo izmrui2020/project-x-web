@@ -30,9 +30,10 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewChecked {
     this.subscription = this._cs.isAuthenticated()
       .subscribe(result => {
         this.loggedIn = result;
+        console.log('get isAuthenticated', result)
       });
     console.log('subscription', this.subscription);
-    //his.loggedIn = false;
+    //this.loggedIn = false;
 
   }
 

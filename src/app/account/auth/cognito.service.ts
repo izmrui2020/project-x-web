@@ -21,6 +21,8 @@ import { environment } from '../../../environments/environment'
 export class CognitoService implements AuthProvider {
 
   loggedIn: BehaviorSubject<boolean>;
+////sign upの時に使う。
+  username: string;
   password: string;
 
   constructor(
@@ -47,6 +49,7 @@ export class CognitoService implements AuthProvider {
 
 /*************************新規作成***************************/
   public signUp(username: string, password: string, email: string): Observable<any> {
+    this.username = username;
     this.password = password;
     console.log('before post', username, email, password)
     return fromPromise(Auth.signUp(username, password, email));
