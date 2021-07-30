@@ -6,5 +6,5 @@ export interface AuthProvider {
   completeNewPassword(password: string): void;
   confirmSignIn(code: string): void;
   login(username, password): Observable<any>;
-  logout(): void;
+  signOut();
 }

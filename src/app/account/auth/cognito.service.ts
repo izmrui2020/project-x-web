@@ -20,7 +20,7 @@ import { environment } from '../../../environments/environment'
 })
 export class CognitoService implements AuthProvider {
 
-  public loggedIn: BehaviorSubject<boolean>;
+  loggedIn: BehaviorSubject<boolean>;
   password: string;
 
   constructor(
@@ -46,11 +46,11 @@ export class CognitoService implements AuthProvider {
   }
 
 /*************************新規作成***************************/
-  public signUp(username: string, email: string, password: string): Observable<any> {
+  public signUp(username: string, password: string, email: string): Observable<any> {
     this.password = password;
-    return fromPromise(Auth.signUp(username, email, password));
+    console.log('before post', username, email, password)
+    return fromPromise(Auth.signUp(username, password, email));
   }
-
 /*************************検証******************************/
   public confirmSignUp(email: string, code: string): Observable<any> {
     return fromPromise(Auth.confirmSignUp(email, code));
@@ -79,16 +79,16 @@ export class CognitoService implements AuthProvider {
   }
 
 /*************************ログアウト*************************/
-  public logout() {
-    fromPromise(Auth.signOut())
-    .subscribe(
-      result => {
-        this.loggedIn.next(false);
-        this._router.navigate(['/login']);
-      },
+public signOut() {
+  fromPromise(Auth.signOut()).subscribe(
+    result => {
+      this.loggedIn.next(false);
+      console.log(this.loggedIn, result)
+      //this._router.navigate(['/login']);
+    },
     error => console.log(error)
-    );
-  }
+  );
+}
 
 /**********************IdTokenを取得*************************/
   public getIdToken(): string {

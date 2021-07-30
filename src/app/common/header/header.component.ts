@@ -31,7 +31,9 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewChecked {
       .subscribe(result => {
         this.loggedIn = result;
       });
+    console.log('subscription', this.subscription);
     //his.loggedIn = false;
+
   }
 
   ngAfterViewChecked() {
@@ -42,19 +44,22 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewChecked {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+    console.log('after ngOnDestroy', this.subscription);
   }
 
-  onClickLogout() {
-    this._cs.logout();
+  clickLogout() {
+    this._cs.signOut();
   }
 
-  onLoginClick() {
+  clickLogin() {
     const url = environment.HOSTED_UI_LOGIN
     window.location.href = "/login"
   }
 
-  onSignupClick() {
+  clickSignup() {
     const url = environment.HOSTED_UI_SIGNUP
     window.location.href = "/signup"
   }
