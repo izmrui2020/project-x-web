@@ -20,11 +20,12 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-5 col-md-8">
+
             <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm.value)" class="bg-white
              rounded-5 shadow-5-strong p-5">
               <div class="form-outline mb-4">
-                <input formControlName="email" type="email" id="form1Example1" class="form-control" required/>
-                <label class="form-label" for="form1Example1">Email address</label>
+                <input formControlName="username" type="text" id="form1Example1" class="form-control" required/>
+                <label class="form-label" for="form1Example1">User Name</label>
               </div>
 
               <div class="form-outline mb-4">
@@ -33,11 +34,11 @@
               </div>
 
               <div class="row mb-4">
+                <button type="submit" class="btn btn-primary btn-block"
+                [disabled]="!loginForm.valid">ログインする</button>
                 <div class="col text-center">
                   <a href="#!">Forgot password?</a>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block"
-                [disabled]="!loginForm.valid">ログインする</button>
                 <p>
                   Form Status: {{ loginForm.status }}
                 </p>
@@ -48,6 +49,7 @@
               </div>
               <p class="mt-5 mb-3 text-muted">© 2021</p>
             </form>
+
           </div>
         </div>
       </div>

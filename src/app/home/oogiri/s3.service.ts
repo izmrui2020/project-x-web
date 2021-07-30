@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { CognitoUserPool, CognitoUserAttribute, CognitoUser, AuthenticationDetails } from 'amazon-cognito-identity-js';
 import * as AWS from 'aws-sdk';
-import { CognitoService } from '../../account/cognito.service';
+import { CognitoService } from '../../account/auth/cognito.service';
 
 @Injectable()
 export class S3Service {
@@ -33,7 +33,7 @@ export class S3Service {
  * */
   uploadFile(file: any): Promise<any> {
     const params = {
-      Bucket: environment.bucketName,
+      Bucket: environment.BUCKET_NAME,
       Key: file.name,
       ContentType: file.type,
       Body: file,

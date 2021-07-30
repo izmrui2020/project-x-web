@@ -3,8 +3,8 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Rout
 import { Observable, of } from 'rxjs';
 import { map, tap, catchError } from 'rxjs/operators';
 
-import { GuardService } from '../guard.service';
-import { CognitoService } from '../cognito.service'
+import { GuardService } from './guard.service';
+import { CognitoService } from '../auth/cognito.service'
 
 @Injectable({
   providedIn: 'root'

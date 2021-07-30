@@ -3,7 +3,7 @@ import { Observable, interval } from 'rxjs';
 
 import { Oogiri } from '../../_models/oogiri-model';
 import { OogiriService } from '../oogiri.service';
-import { CognitoService } from '../../../account/cognito.service';
+import { CognitoService } from '../../../account/auth/cognito.service';
 import { AlertService } from '../../../common/_alert/alert.service';
 
 @Component({
@@ -55,7 +55,6 @@ export class OogiriListComponent implements OnInit {
     // timer.subscribe(() => this.getOogiries());
     this.getOogiries()
   }
-
   getOogiries() {
     return this.oogiries
     // this._os.getOogiries()

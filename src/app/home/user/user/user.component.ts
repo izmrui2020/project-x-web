@@ -4,7 +4,7 @@ import { first } from 'rxjs/operators';
 import { Oogiri } from '../../_models/oogiri-model';
 import { User } from '../../_models/user-model';
 import { UserService } from '../user.service';
-import { CognitoService } from '../../../account/cognito.service';
+import { CognitoService } from '../../../account/auth/cognito.service';
 
 @Component({
   selector: 'app-user',
@@ -12,6 +12,7 @@ import { CognitoService } from '../../../account/cognito.service';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
+  nickname: string;
   users!: User[];
   user = [
     {
@@ -34,10 +35,24 @@ export class UserComponent implements OnInit {
 
   constructor(
     private _us: UserService,
+    private _cs: CognitoService,
   ) { }
 
   ngOnInit() {
+    this.currentAuthenticatedSession();
     return this.myOogiries
+  }
+  currentAuthenticatedSession(): void {
+    this._cs.currentAuthenticatedSession()
+    .subscribe(
+      result => {
+        console.log(result)
+        this.nickname = result.username;
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
   delete(id: string) {
