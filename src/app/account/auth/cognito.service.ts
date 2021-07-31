@@ -21,7 +21,6 @@ import { environment } from '../../../environments/environment'
 export class CognitoService implements AuthProvider {
 
   loggedIn: BehaviorSubject<boolean>;
-////sign upの時に使う。
   username: string;
   password: string;
 
@@ -95,7 +94,7 @@ public signOut() {
 
 /**********************IdTokenを取得*************************/
   public getIdToken(): string {
-    return Auth.currentSession()['__zone_symbol__value']['idToken']['jwtToken'];
+    return Auth.currentSession()['__zone_symbol__value']['idToken'];//['jwtToken'];
   }
 
 }
