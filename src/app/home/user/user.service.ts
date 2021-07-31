@@ -76,7 +76,6 @@ export class UserService {
       return of(result as T);
     };
   }
-
   private log(message: string) {
     console.log('petService: ' + message);
   }

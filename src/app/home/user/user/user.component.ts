@@ -5,6 +5,8 @@ import { Oogiri } from '../../_models/oogiri-model';
 import { User } from '../../_models/user-model';
 import { UserService } from '../user.service';
 import { CognitoService } from '../../../account/auth/cognito.service';
+import Amplify, { Auth } from 'aws-amplify';
+import amplify from '../../../../aws-exports';
 
 @Component({
   selector: 'app-user',
@@ -13,6 +15,7 @@ import { CognitoService } from '../../../account/auth/cognito.service';
 })
 export class UserComponent implements OnInit {
   nickname: string;
+  private token: string;
   users!: User[];
   user = [
     {
@@ -32,22 +35,32 @@ export class UserComponent implements OnInit {
 	]
 
   //myOogiries: Oogiri[];
-
   constructor(
     private _us: UserService,
     private _cs: CognitoService,
   ) { }
 
   ngOnInit() {
+    this.token = this._cs.getIdToken();
+    this.getMyData();
     this.currentAuthenticatedSession();
+    this.nickname = localStorage.getItem(
+      amplify.localstorageBaseKey = 'LastAuthUser'
+    );
     return this.myOogiries
   }
+  getMyData() {
+    console.log('token', this.token);
+    this._us.getUserOogiries(this.token);
+  }
+
   currentAuthenticatedSession(): void {
     this._cs.currentAuthenticatedSession()
     .subscribe(
       result => {
         console.log(result)
         this.nickname = result.username;
+        console.log('nickname', this.nickname)
       },
       error => {
         console.log(error);
