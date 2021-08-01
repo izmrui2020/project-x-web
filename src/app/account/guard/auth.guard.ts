@@ -20,15 +20,15 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      // return t_cognitohis._cognito.isAuthenticated()
-      //   .pipe(
-      //     tap(loggedIn => {
-      //       if (!loggedIn) {
-      //         this._router.navigate(['/login']);
-      //       }
-      //     })
-      //   )
-      return true;
+      return this._cognito.isAuthenticated()
+        .pipe(
+          tap(loggedIn => {
+            if (!loggedIn) {
+              this._router.navigate(['/login']);
+            }
+          }
+        )
+      )
   }
 
 }

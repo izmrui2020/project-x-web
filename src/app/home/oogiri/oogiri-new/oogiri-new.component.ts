@@ -33,7 +33,7 @@ export class OogiriNewComponent implements OnInit {
   ) {
     this.postForm = this._fb.group({
       title:        ['', Validators.required],
-      image:        ['', Validators.required],
+      image:        [''],
       oogiri:       ['', Validators.required],
       description:  ['']
     });
