@@ -3,21 +3,23 @@
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
-      <h2>大喜利広場</h2>
+      <a routerLink="/" class="header-title">
+        <h2>大喜利広場</h2>
+      </a>
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a routerLink="oogiri/new" class="nav-link px-2 text-white">投稿する</a></li>
-        <li><a routerLink="user" class="nav-link px-2 text-white">マイページ</a></li>
+        <li><a routerLink="/oogiri-new" class="nav-link px-2 text-white">投稿する</a></li>
+        <li><a routerLink="/user" class="nav-link px-2 text-white">マイページ</a></li>
       </ul>
 
       <div class="text-end">
         <!-- ログイン時 -->
         <button type="button"
-        *ngIf="(_cs.loggedIn | async)"
+        *ngIf="(_cognito.loggedIn | async)"
         class="btn btn-outline-primary"
         (click)="clickLogout()">
         ログアウト
         </button>
-        <a routerLink="/user" *ngIf="(_cs.loggedIn | async)">
+        <a routerLink="/user" *ngIf="(_cognito.loggedIn | async)">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
           </svg>
@@ -26,13 +28,13 @@
       <div class='text-end'>
         <!-- ログアウト時 -->
         <button type="button"
-        *ngIf="!(_cs.loggedIn | async)"
+        *ngIf="!(_cognito.loggedIn | async)"
         class="btn btn-outline-primary me-2"
         (click)="clickLogin()">
         ログイン
         </button>
         <button type="button"
-        *ngIf="!(_cs.loggedIn | async)"
+        *ngIf="!(_cognito.loggedIn | async)"
         class="btn btn-outline-primary"
         (click)="clickSignup()">
         新規登録

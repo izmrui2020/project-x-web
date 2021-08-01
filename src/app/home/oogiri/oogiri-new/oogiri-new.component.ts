@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
+import { first } from 'rxjs/operators';
 
 import { OogiriService } from '../oogiri.service';
+//AWS
+import { CognitoService } from '../../../account/auth/cognito.service';
+import Amplify, { Auth } from 'aws-amplify';
+import amplify from '../../../../aws-exports';
+
+import { Oogiri } from '../../_models/oogiri-model';
+import { User } from '../../_models/user-model';
 import { environment } from '../../../../environments/environment'
 
 @Component({
@@ -11,54 +18,94 @@ import { environment } from '../../../../environments/environment'
   styleUrls: ['./oogiri-new.component.scss']
 })
 export class OogiriNewComponent implements OnInit {
-  URL = environment.API_URL;
+  nickname: string;
+  postForm: FormGroup;
   imgFile: string;
-
-  new_post = this._fb.group({
-    topic:        ['', Validators.required],
-    file:         ['', Validators.required],
-    oogiri:       ['', Validators.required],
-    description:  [''],
-    imgSrc:       ['']
-  });
+  //imgSrc: ArrayBuffer;
+  loading = false;
+  judgimg: boolean;
+  private token: string;
 
   constructor(
     private _fb: FormBuilder,
     private _oogiri: OogiriService,
-    private http: HttpClient,
-  ) { }
-
+    private _cognito: CognitoService,
+  ) {
+    this.postForm = this._fb.group({
+      title:        ['', Validators.required],
+      image:        ['', Validators.required],
+      oogiri:       ['', Validators.required],
+      description:  ['']
+    });
+  }
 // FormControlsを明示的に扱えるようにする。
   get f(){
-    return this.new_post.controls;
+    return this.postForm.controls;
   }
 
-  onImageChange(e) {
-    const reader = new FileReader();
-
-    if(e.target.files && e.target.files.length) {
-      const [file] = e.target.files;
-      reader.readAsDataURL(file);
-
-      reader.onload = () => {
-        this.imgFile = reader.result as string;
-        this.new_post.patchValue({
-          imgSrc: reader.result
-        });
-
-      };
-    }
+  ngOnInit(){
+    this.judgimg = true;
+    this.token = this._cognito.getIdToken();
+    this.currentAuthenticatedSession();
+    this.nickname = localStorage.getItem(
+      amplify.localstorageBaseKey = 'LastAuthUser'
+    );
   }
 
-  onSubmit() {
-    console.log(this.new_post.value);
-    this._oogiri.postNewOogiri(this.new_post.value)
-      .subscribe(res => {
-        console.log(res);
-        alert('Uploaded Successfully.');
+  currentAuthenticatedSession() {
+    this._cognito.currentAuthenticatedSession()
+    .subscribe(
+      result => {
+        console.log(result);
+        this.nickname = result.username;
+        console.log('nickname', this.nickname)
+      },
+      error => {
+        console.log(error)
       }
     )
   }
 
-  ngOnInit(){}
+  onImageChange(event) {
+    this.judgimg = false;
+    this.fileReader(event);
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.postForm.get('image').setValue(file);
+      this.postForm.get('image').updateValueAndValidity()
+    };
+  }
+
+  fileReader(data) {
+    const reader = new FileReader();
+    const [file] = data.target.files;
+    reader.readAsDataURL(file);
+
+    reader.onload = () => {
+      this.imgFile = reader.result as string;
+    console.log(this.judgimg)
+    };
+  }
+
+  onSubmit() {
+    var formData: any = new FormData();
+    formData.append("oogiri[title]", this.postForm.get('title').value);
+    formData.append("oogiri[image]", this.postForm.get('image').value);
+    formData.append("oogiri[oogiri]", this.postForm.get('oogiri').value);
+    formData.append("oogiri[description]", this.postForm.get('description').value);
+
+    console.log('postdata', this.postForm.value, formData);
+    this._oogiri.postNewOogiri(formData, this.token)
+      .subscribe(
+        res => {
+          console.log(res);
+          alert('Successfully.');
+        },
+        error => {
+          console.log(error);
+          alert(error);
+        }
+      )
+  }
+
 }

@@ -19,7 +19,7 @@ export class UserService {
 
   constructor(
     private _http: HttpClient,
-    private _cs: CognitoService,
+    private _cognito: CognitoService,
   ) {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -33,7 +33,7 @@ export class UserService {
 
   public getUserOogiries(token: string): Observable<any> {
     const forToken = {
-      headers: { Authorization: token }
+      headers: new HttpHeaders({ Authorization: token })
     };
     return this._http.get<any>(`${baseUrl}`, forToken)
       .pipe(

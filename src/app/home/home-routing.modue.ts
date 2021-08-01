@@ -24,7 +24,7 @@ const routes: Routes = [
       { path: '', component: OogiriListComponent },
       { path: 'oogiri/:oogiriId', component: OogiriDetailComponent },
       // auth
-      { path: 'oogiri/new', component: OogiriNewComponent, canActivate: [AuthGuard] },
+      { path: 'oogiri-new', component: OogiriNewComponent, canActivate: [AuthGuard] },
       { path: 'oogiri-edit', component: OogiriEditComponent, canActivate: [AuthGuard] },
       { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
       // { path: 'user/add', component: UserControlComponent, canActivate: [AuthGuard] },
