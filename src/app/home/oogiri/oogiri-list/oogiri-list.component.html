@@ -1,30 +1,27 @@
-<div class="container">
-  <a routerLink='/oogiri' >OOGIRI</a>
-  <a routerLink="/proposal">proposal</a>
-  <a routerLink="/proposal/new">proposal new</a>
-  <a routerLink="/user">go usre page</a>
-  <a routerLink="/oogiri/new">go uplode</a>
-  <p>早速投稿してみよう</p>
-</div>
 
-<div class="container">
-  <div class="row">
-    <div *ngFor="let oogiri of oogiries; let oogiriId = index" class="col-sm" >
-      <div class="card">
-        <h2 class="text-center">{{ oogiri.title }}</h2>
 
-          <img src="{{ oogiri.image_url }}" class="card-img-top" alt="大喜利のテーマとなる写真が挿入されます。">
-          <div class="card-body">
-            <h2 class="text-center">{{ oogiri.oogiri }}</h2>
-            <p class="card-text"><small class="text-muted">{{ oogiri.updated_at | date }}</small></p>
-            <a routerLink="/oogiri/{{oogiriId}}" class='product-list-a'>詳細</a>
-          </div>
+<h1 class="text-center">大喜利広場</h1>
+
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let oogiri of oogiries; let oogiriId = index" class="col-sm" >
+        <div class="card">
+          <h2 class="text-center">{{ oogiri.title }}</h2>
+
+            <img src="{{ oogiri.image_url }}" class="card-img-top"
+            alt="大喜利のテーマとなる写真が挿入されます。">
+            <div class="card-body">
+              <h2 class="text-center">{{ oogiri.oogiri }}</h2>
+              <p class="card-text"><small class="text-muted">{{ oogiri.updated_at | date }}</small></p>
+              <a routerLink="/oogiri/{{oogiriId}}" class='product-list-a'>詳細</a>
+            </div>
+        </div>
+      </div>
+      <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="oogiries" (changePage)="onChangePage($event)"></jw-pagination>
       </div>
     </div>
-    <div class="card-footer pb-0 pt-3">
-      <jw-pagination [items]="oogiries" (changePage)="onChangePage($event)"></jw-pagination>
-    </div>
   </div>
-</div>
+
 
 

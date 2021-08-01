@@ -69,7 +69,6 @@ updateHero() {
       return of(result as T);
     };
   }
-
   private log(message: string) {
     console.log('petService: ' + message);
   }
