@@ -27,7 +27,7 @@ export class OogiriService {
   oogiriList: Oogiri[];
 /**Get oogiri list */
   public getOogiries(): Observable<any> {
-    return this._http.get<any>(this.URL + "/oogiris")
+    return this._http.get<any>(`${baseUrl}/oogiris`)
       .pipe(
         map((res = Response) => {
           this.oogiriList = res;

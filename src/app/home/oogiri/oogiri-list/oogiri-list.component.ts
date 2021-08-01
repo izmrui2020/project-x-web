@@ -14,30 +14,7 @@ import { AlertService } from '../../../common/_alert/alert.service';
 })
 
 export class OogiriListComponent implements OnInit {
-
-  tmpOne: Oogiri = new Oogiri(1, 'title1', 'oogiri1', 'comment1', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
-	tmpTwo: Oogiri = new Oogiri(2, 'title2', 'oogiri2', 'comment2', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
-	tmpThree: Oogiri = new Oogiri(3, 'title3', 'oogiri3', 'comment3', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
-  tmpFore: Oogiri = new Oogiri(3, 'title3', 'oogiri3', 'comment3', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
-  tmpFive: Oogiri = new Oogiri(3, 'title3', 'oogiri3', 'comment3', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
-  tmpSix: Oogiri = new Oogiri(3, 'title3', 'oogiri3', 'comment3', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
-  tmpSeven: Oogiri = new Oogiri(3, 'title3', 'oogiri3', 'comment3', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
-  tmpEight: Oogiri = new Oogiri(3, 'title3', 'oogiri3', 'comment3', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
-  tmpNine: Oogiri = new Oogiri(3, 'title3', 'oogiri3', 'comment3', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
-  tmpTen: Oogiri = new Oogiri(3, 'title3', 'oogiri3', 'comment3', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
-
-	oogiries : Oogiri[] = [
-		this.tmpOne,
-		this.tmpTwo,
-		this.tmpThree,
-    this.tmpFore,
-    this.tmpFive,
-    this.tmpSix,
-    this.tmpSeven,
-    this.tmpEight,
-    this.tmpNine,
-    this.tmpTen,
-	]
+  oogiries : Oogiri[]
   pageOfItems: Array<any>;
 
   private token: string;
@@ -46,7 +23,7 @@ export class OogiriListComponent implements OnInit {
 
   constructor(
     protected _as: AlertService,
-    private _os: OogiriService,
+    private _oogiri: OogiriService,
     private _cognito: CognitoService,
   ) { }
 
@@ -56,13 +33,15 @@ export class OogiriListComponent implements OnInit {
     this.getOogiries()
   }
   getOogiries() {
-    return this.oogiries
-    // this._os.getOogiries()
-    //   .subscribe(
-    //     result => {
-    //       this.oogiries = result;
-    //       console.log(result);
-    //     });
+    this._oogiri.getOogiries()
+      .subscribe(
+        res => {
+          this.oogiries = res
+        }
+      ),
+      error => {
+        console.log(error)
+      }
   }
 
   onChangePage(pageOfItems: Array<any>) {

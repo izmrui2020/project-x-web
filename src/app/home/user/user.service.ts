@@ -47,7 +47,7 @@ export class UserService {
   }
 
   postNewUser(values): Observable<any> {
-    return this._http.post<any>(`${baseUrl}/users/`, values, this.httpOptions)
+    return this._http.post<any>(`${baseUrl}/users/edit`, values, this.httpOptions)
     .pipe(
       catchError(this.handleError<any[]>('postNewUser', []))
     )
