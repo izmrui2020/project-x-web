@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewChecked {
 
   constructor(
     private _cd: ChangeDetectorRef,
-    public _cs: CognitoService,
+    public _cognito: CognitoService,
   ) {
     Amplify.configure(amplify);
     this.nickname = localStorage.getItem(
@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewChecked {
   }
 
   ngOnInit() {
-    this.subscription = this._cs.isAuthenticated()
+    this.subscription = this._cognito.isAuthenticated()
       .subscribe(result => {
         this.loggedIn = result;
         console.log('get isAuthenticated', result)
@@ -52,7 +52,7 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewChecked {
   }
 
   clickLogout() {
-    this._cs.signOut();
+    this._cognito.signOut();
   }
 
   clickLogin() {

@@ -17,7 +17,7 @@ export class SignUpComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private _router: Router,
-    private _cs: CognitoService,
+    private _cognito: CognitoService,
   ) { }
 
   ngOnInit() {
@@ -42,7 +42,7 @@ export class SignUpComponent implements OnInit {
           email     = signupForm.email,
           password  = signupForm.password;
       console.log(username, email, password)
-      this._cs.signUp(username,  password, email)
+      this._cognito.signUp(username,  password, email)
         .subscribe(
           result => {
             this.successfullySignup = true;
@@ -55,11 +55,11 @@ export class SignUpComponent implements OnInit {
 
   onSubmitConfirmation(value: any) {
     const confirmationCode  = value.confirmationCode;
-    this._cs.confirmSignUp(this._cs.username, confirmationCode).subscribe(
+    this._cognito.confirmSignUp(this._cognito.username, confirmationCode).subscribe(
       result => {
         console.log(result);
-        this._cs.login(  this._cs.username,
-                          this._cs.password)
+        this._cognito.login(  this._cognito.username,
+                          this._cognito.password)
         .subscribe(
           () => {
             this._router.navigate(['/user']);

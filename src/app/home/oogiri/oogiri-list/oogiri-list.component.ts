@@ -47,7 +47,7 @@ export class OogiriListComponent implements OnInit {
   constructor(
     protected _as: AlertService,
     private _os: OogiriService,
-    private _cs: CognitoService,
+    private _cognito: CognitoService,
   ) { }
 
   ngOnInit() {

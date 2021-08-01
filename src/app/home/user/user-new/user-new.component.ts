@@ -4,7 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { UserService } from '../user.service';
-import { CognitoService } from 'src/app/account/auth/cognito.service';
+import { CognitoService } from '../../../account/auth/cognito.service';
+import { HomeService } from '../../home.service';
 import { RailsUserFormData } from '../rails-user-formdata';
 
 
@@ -27,7 +28,8 @@ export class UserNewComponent implements OnInit {
     private _ar: ActivatedRoute,
     private _router: Router,
     private _us: UserService,
-    private _cs: CognitoService,
+    private _home: HomeService,
+    private _cognito: CognitoService,
   ) {
     this.judgimg = true;
 
@@ -42,7 +44,7 @@ export class UserNewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.token = this._cs.getIdToken();
+    this.token = this._cognito.getIdToken();
   }
 
   onImageChange(event) {
@@ -68,7 +70,7 @@ export class UserNewComponent implements OnInit {
 
   onSubmit() {
     var formData: any = new FormData();
-    formData.append("user[nickname]", this.userForm.get('nickname').value)
+    formData.append("user[nickname]", this.userForm.get('nickname').value);
     formData.append("user[avatar]", this.userForm.get('avatar').value);
 
     console.log('etc', this.userForm.value, formData)

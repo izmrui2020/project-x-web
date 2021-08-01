@@ -13,14 +13,14 @@ export class AuthGuard implements CanActivate {
 
   constructor(
     private _gs: GuardService,
-    private _cs: CognitoService,
+    private _cognito: CognitoService,
     private _router: Router
   ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      // return this._cs.isAuthenticated()
+      // return t_cognitohis._cognito.isAuthenticated()
       //   .pipe(
       //     tap(loggedIn => {
       //       if (!loggedIn) {

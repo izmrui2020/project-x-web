@@ -3,33 +3,33 @@
 		<h1 class="text-center">投稿する</h1>
 
 			<div>
-				<form [formGroup]="new_post" (ngSubmit)="onSubmit()">
+				<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
 
 					<div class="form-group">
-						<label for="topic">題名</label>
-						<input  formControlName="topic"
+						<label for="title">題名</label>
+						<input  formControlName="title"
                     type="text"
 										class="form-control"
-										id="topic"
+										id="title"
 										placeholder="お題.."
 										required
-										name="topic"
+										name="title"
 						>
-            <div *ngIf="f.topic.touched && f.topic.invalid" class="alert alert-danger">
-              <div *ngIf="uf.topic.errors.required">題名は必須項目です。</div>
+            <div *ngIf="f.title.touched && f.title.invalid" class="alert alert-danger">
+              <div *ngIf="uf.title.errors.required">題名は必須項目です。</div>
             </div>
           </div>
 
           <div >
-            <label for="file">ファイル</label>
+            <label for="image">ファイル</label>
             <input  type="file"
-                    id="file"
+                    id="image"
                     accept="image/*"
-                    formControlName="file"
+                    formControlName="image"
                     (change)="onImageChange($event)"
             >
-            <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
-              <div *ngIf="uf.file.errors.required">画像は必須です。</div>
+            <div *ngIf="f.image.touched && f.image.invalid" class="alert alert-danger">
+              <div *ngIf="uf.image.errors.required">画像は必須です。</div>
             </div>
           </div>
 
@@ -61,7 +61,7 @@
             <textarea formControlName="description"
                       class="form-control"
                       placeholder="記入してください..."
-                      id="exampleFormControlTextarea1"
+                      id="description"
                       rows='4'
                       type="text"
             >

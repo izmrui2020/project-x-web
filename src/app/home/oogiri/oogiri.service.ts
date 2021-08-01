@@ -1,25 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs'
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, tap } from 'rxjs/operators';
 
 import { Oogiri } from '../_models/oogiri-model';
 import { environment } from '../../../environments/environment';
 import { HttpService } from '../../service/http.service';
+
+const baseUrl = `${environment.API_URL}/api/v1`;
 
 @Injectable({
   providedIn: 'root'
 })
 export class OogiriService {
   private URL = environment.API_URL; //url: 'http://localhost:3000'
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
 
   constructor(
     private _http: HttpClient,
     private htservie: HttpService,
-  ) { }
+  ) {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'multipart/form-data' })
+    };
+  }
 
   oogiriList: Oogiri[];
 /**Get oogiri list */
@@ -41,9 +44,16 @@ export class OogiriService {
   }
 
 /**Post new Oogiri object */
-  public postNewOogiri(values): Observable<any> {
-    return this._http.post<any>(URL + "/", values)
+  public postNewOogiri(values, token): Observable<any> {
+    const postOption = {
+      headers: new HttpHeaders({
+        'Content-Type':  'multipart/form-data',
+        Authorization: token
+      })
+    };
+    return this._http.post<any>(`${baseUrl}/oogiri`, values, postOption)
       .pipe(
+        tap(ooriri => ooriri),
         catchError(this.handleError<any[]>('postNewOogiri', []))
       )
   }

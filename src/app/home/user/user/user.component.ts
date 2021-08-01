@@ -37,11 +37,11 @@ export class UserComponent implements OnInit {
   //myOogiries: Oogiri[];
   constructor(
     private _us: UserService,
-    private _cs: CognitoService,
+    private _cognito: CognitoService,
   ) { }
 
   ngOnInit() {
-    this.token = this._cs.getIdToken();
+    this.token = this._cognito.getIdToken();
     this.getMyData();
     this.currentAuthenticatedSession();
     this.nickname = localStorage.getItem(
@@ -55,7 +55,7 @@ export class UserComponent implements OnInit {
   }
 
   currentAuthenticatedSession(): void {
-    this._cs.currentAuthenticatedSession()
+    this._cognito.currentAuthenticatedSession()
     .subscribe(
       result => {
         console.log(result)
