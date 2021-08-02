@@ -24,8 +24,8 @@
             <label for="image">ファイル</label>
             <input  type="file"
                     id="image"
+                    name="image"
                     accept="image/*"
-                    formControlName="image"
                     (change)="onImageChange($event)"
             >
             <div *ngIf="f.image.touched && f.image.invalid" class="alert alert-danger">
