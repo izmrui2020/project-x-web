@@ -69,10 +69,12 @@ export class OogiriNewComponent implements OnInit {
   onImageChange(event) {
     this.judgimg = false;
     this.fileReader(event);
+    console.log(event);
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       this.postForm.get('image').setValue(file);
-      this.postForm.get('image').updateValueAndValidity()
+      //this.postForm.get('image').updateValueAndValidity()
+      console.log(this.postForm.get('image').value)
     };
   }
 
