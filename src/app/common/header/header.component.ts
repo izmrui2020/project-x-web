@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy, AfterViewChecked, ChangeDetectorRef } fro
 import { Subscription } from 'rxjs/Subscription';
 import { CognitoService } from '../../account/auth/cognito.service';
 
-import { environment } from '../../../environments/environment'
 import Amplify, { Auth } from 'aws-amplify';
 import amplify from '../../../aws-exports';
 
@@ -56,12 +55,12 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewChecked {
   }
 
   clickLogin() {
-    const url = environment.HOSTED_UI_LOGIN
+    const url = process.env.HOSTED_UI_LOGIN
     window.location.href = "/login"
   }
 
   clickSignup() {
-    const url = environment.HOSTED_UI_SIGNUP
+    const url = process.env.HOSTED_UI_SIGNUP
     window.location.href = "/signup"
   }
 

@@ -4,16 +4,15 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { map, catchError, tap } from 'rxjs/operators';
 
 import { Oogiri } from '../_models/oogiri-model';
-import { environment } from '../../../environments/environment';
 import { HttpService } from '../../service/http.service';
 
-const baseUrl = `${environment.API_URL}/api/v1`;
+const baseUrl = `${process.env.API_URL}/api/v1`;
 
 @Injectable({
   providedIn: 'root'
 })
 export class OogiriService {
-  private URL = environment.API_URL; //url: 'http://localhost:3000'
+  private URL = process.env.API_URL; //url: 'http://localhost:3000'
 
   constructor(
     private _http: HttpClient,
@@ -53,7 +52,7 @@ export class OogiriService {
     };
     return this._http.post<any>(`${baseUrl}/oogiri`, values, postOption)
       .pipe(
-        tap(ooriri => ooriri),
+        //tap(ooriri => ooriri),
         catchError(this.handleError<any[]>('postNewOogiri', []))
       )
   }
