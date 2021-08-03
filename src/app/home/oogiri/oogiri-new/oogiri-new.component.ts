@@ -10,7 +10,6 @@ import amplify from '../../../../aws-exports';
 
 import { Oogiri } from '../../_models/oogiri-model';
 import { User } from '../../_models/user-model';
-import { environment } from '../../../../environments/environment'
 
 @Component({
   selector: 'app-oogiri-new',
