@@ -4,7 +4,6 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { map, catchError, tap } from 'rxjs/operators';
 
 import { Oogiri } from '../_models/oogiri-model';
-import { HttpService } from '../../service/http.service';
 import { environment } from '../../../environments/environment'
 
 const baseUrl = `${environment.API_URL}/api/v1`;
@@ -17,7 +16,6 @@ export class OogiriService {
 
   constructor(
     private _http: HttpClient,
-    private htservie: HttpService,
   ) {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'multipart/form-data' })
