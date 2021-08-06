@@ -14,15 +14,11 @@ import amplify from '../../../../aws-exports';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
+  username: string;
   nickname: string;
   private token: string;
   users!: User[];
-  user = [
-    {
-      name: 'alexxa',
-      id: '12345'
-    }
-  ];
+
 
   tmpOne: Oogiri = new Oogiri(1, 'title1', 'oogiri1', 'comment1', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
 	tmpTwo: Oogiri = new Oogiri(2, 'title2', 'oogiri2', 'comment2', 'https://oogiri-images.s3.ap-northeast-1.amazonaws.com/test/sample5.png')
@@ -44,7 +40,7 @@ export class UserComponent implements OnInit {
     this.token = this._cognito.getIdToken();
     this.getMyData();
     this.currentAuthenticatedSession();
-    this.nickname = localStorage.getItem(
+    this.username = localStorage.getItem(
       amplify.localstorageBaseKey = 'LastAuthUser'
     );
     return this.myOogiries
