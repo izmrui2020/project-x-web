@@ -6,8 +6,9 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { CognitoService } from 'src/app/account/auth/cognito.service';
 
 import { User } from '../_models/user-model';
+import { environment } from '../../../environments/environment'
 
-const baseUrl = `${process.env.API_URL}/api/v1`;
+const baseUrl = `${environment.API_URL}/api/v1`;
 
 @Injectable({
   providedIn: 'root'

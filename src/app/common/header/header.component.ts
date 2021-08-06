@@ -5,6 +5,8 @@ import { CognitoService } from '../../account/auth/cognito.service';
 import Amplify, { Auth } from 'aws-amplify';
 import amplify from '../../../aws-exports';
 
+import { environment } from '../../../environments/environment'
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -55,12 +57,12 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewChecked {
   }
 
   clickLogin() {
-    const url = process.env.HOSTED_UI_LOGIN
+    const url = environment.HOSTED_UI_LOGIN
     window.location.href = "/login"
   }
 
   clickSignup() {
-    const url = process.env.HOSTED_UI_SIGNUP
+    const url = environment.HOSTED_UI_SIGNUP
     window.location.href = "/signup"
   }
 
