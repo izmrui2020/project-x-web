@@ -13,8 +13,6 @@ import { AuthProvider } from './auth-provider';
 //import fromAuth, * as authSlice from './auth.slice';
 import { AuthUser } from './cognito-user-model';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
