@@ -29,7 +29,7 @@ const routes: Routes = [
       { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
       // { path: 'user/add', component: UserControlComponent, canActivate: [AuthGuard] },
       // { path: 'user/edit/:id', component: UserControlComponent, canActivate: [AuthGuard] },
-      //{ path: 'user/control', component: UserControlComponent, canActivate: [AuthGuard] },
+      { path: 'user/control', component: UserControlComponent, canActivate: [AuthGuard] },
       { path: 'user/new', component: UserNewComponent },
 
       { path: 'proposal', component: ProposalComponent },
