@@ -18,7 +18,6 @@ export class OogiriListComponent implements OnInit {
   pageOfItems: Array<any>;
 
   private token: string;
-  //oogiries: Oogiri[];
   errorMessage: string;
 
   constructor(
@@ -32,6 +31,7 @@ export class OogiriListComponent implements OnInit {
     // timer.subscribe(() => this.getOogiries());
     this.getOogiries()
   }
+//バックエンドからデータをとってくる。
   getOogiries() {
     this._oogiri.getOogiries()
       .subscribe(

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Router } from '@angular/router';
 import { Observable, of, BehaviorSubject, from } from 'rxjs'
 import { fromPromise } from 'rxjs/observable/fromPromise';

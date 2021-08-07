@@ -12,11 +12,12 @@ import { CognitoService } from '../auth/cognito.service'
 export class AuthGuard implements CanActivate {
 
   constructor(
-    private _gs: GuardService,
+    private _guardservice: GuardService,
     private _cognito: CognitoService,
     private _router: Router
   ) {}
 
+  //Conitoにログイン状態か聞きにいく。
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {

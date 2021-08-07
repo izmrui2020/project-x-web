@@ -43,6 +43,7 @@ export class OogiriService {
 
 /**Post new Oogiri object */
   public postNewOogiri(values, token): Observable<any> {
+    console.log('before post metho', values, token)
     const postOption = {
       headers: new HttpHeaders({
         'Content-Type':  'multipart/form-data',

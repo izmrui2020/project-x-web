@@ -28,5 +28,6 @@ export class OogiriDetailComponent implements OnInit {
       }
     )
   }
+///Oogiri Listで取得した配列から番号をとってきてその番号の配列を検索する。そこでヒットしたデータを乗っける。
 
 }
