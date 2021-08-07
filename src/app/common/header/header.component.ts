@@ -66,11 +66,4 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewChecked {
     window.location.href = "/signup"
   }
 
-  // onLogoutClick() {
-  //   console.log("Logout Clicked");
-  //   Auth.signOut({ global: true })
-  //     .then(data => console.log(data))
-  //     .catch(err => console.log(err));
-  // }
-
 }
