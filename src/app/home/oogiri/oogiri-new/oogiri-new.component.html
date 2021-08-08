@@ -3,7 +3,7 @@
 		<h1 class="text-center">投稿する</h1>
 
 			<div>
-				<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+				<form [formGroup]="postForm" (ngSubmit)="onSubmitData()">
 
 					<div class="form-group">
 						<label for="title">題名</label>
@@ -24,7 +24,6 @@
             <label for="image">ファイル</label>
             <input  type="file"
                     id="image"
-                    name="image"
                     accept="image/*"
                     (change)="onImageChange($event)"
             >

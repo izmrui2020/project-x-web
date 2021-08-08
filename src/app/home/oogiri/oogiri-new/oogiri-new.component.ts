@@ -65,6 +65,12 @@ export class OogiriNewComponent implements OnInit {
     )
   }
 
+  //その他をPOSTする時のメソッド
+onSubmitData() {
+
+}
+
+//画像のPOSTメソッドとその他で分ける。
   onImageChange(event) {
     this.judgimg = false;
     this.fileReader(event);
@@ -88,7 +94,7 @@ export class OogiriNewComponent implements OnInit {
     };
   }
 
-  onSubmit() {
+  onSubmitImage() {
     var formData: any = new FormData();
     formData.append("oogiri[title]", this.postForm.get('title').value);
     formData.append("oogiri[image]", this.postForm.get('image').value);
