@@ -32,7 +32,6 @@ export class OogiriNewComponent implements OnInit {
   ) {
     this.postForm = this._fb.group({
       title:        ['', Validators.required],
-      image:        [''],
       oogiri:       ['', Validators.required],
       description:  ['']
     });
@@ -67,7 +66,23 @@ export class OogiriNewComponent implements OnInit {
 
   //その他をPOSTする時のメソッド
 onSubmitData() {
+  var formData: any = new FormData();
+    formData.append("oogiri[title]", this.postForm.get('title').value);
+    formData.append("oogiri[oogiri]", this.postForm.get('oogiri').value);
+    formData.append("oogiri[description]", this.postForm.get('description').value);
 
+    console.log('postdata', this.postForm.value, formData);
+    this._oogiri.postNewOogiri(formData, this.token)
+      .subscribe(
+        res => {
+          console.log(res);
+          alert('Successfully.');
+        },
+        error => {
+          console.log(error);
+          alert(error);
+        }
+      )
 }
 
 //画像のPOSTメソッドとその他で分ける。
@@ -93,7 +108,7 @@ onSubmitData() {
     console.log(this.judgimg)
     };
   }
-
+//これを適応ボタン的なのにしてPOSTしてしまう。
   onSubmitImage() {
     var formData: any = new FormData();
     formData.append("oogiri[title]", this.postForm.get('title').value);

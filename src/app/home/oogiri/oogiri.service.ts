@@ -41,6 +41,21 @@ export class OogiriService {
     return this.oogiriList[id]
   }
 
+//
+public postNewOogiriImage(value, token): Observable<any>{
+  console.log('before post image', value, token);
+  const postImage = {
+    headers: new HttpHeaders({
+      'Content-Type': 'multipart/form-data',
+      Authorization: token
+    })
+  };
+  return this._http.post<any>(`${baseUrl}/oogiri/image`, value, postImage)
+    .pipe(
+      catchError(this.handleError<any[]>('postNewOgiriImage', []))
+    )
+}
+
 /**Post new Oogiri object */
   public postNewOogiri(values, token): Observable<any> {
     console.log('before post metho', values, token)
